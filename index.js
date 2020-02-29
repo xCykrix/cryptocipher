@@ -1,5 +1,13 @@
-class CryptoCiphers {
+class Encryption {
 
 }
 
-module.exports = { CryptoCiphers }
+class Decryption {
+
+}
+
+class Hashing {
+
+}
+
+module.exports = { Encryption, Decryption, Hashing }
