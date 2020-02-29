@@ -23,7 +23,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn run dev:lint",
-      "pre-push": "yarn run dev:upgrade && yarn run dev:tests:all"
+      "pre-push": "yarn run dev:tests:all"
     }
   },
   "peerDependencies": {},
