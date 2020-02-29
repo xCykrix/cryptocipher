@@ -14,11 +14,17 @@
     "yarn": ">=1.22.0"
   },
   "scripts": {
-    "dev:lint": "",
-    "dev:tests:all": "",
-    "dev:tests:encryption": "",
-    "dev:tests:decryption": "",
-    "dev:tests:hashing": ""
+    "dev:lint": "eslint . --fix",
+    "dev:upgrade": "npm-check --update-all --specials --ignore husky",
+    "dev:tests:all": "yarn run dev:tests:encryption && yarn run dev:tests:hashing",
+    "dev:tests:encryption": "npx --no-install ./tests/run-ciphers.js",
+    "dev:tests:hashing": "npx --no-install ./tests/run-hashes.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run dev:lint",
+      "pre-push": "yarn run dev:upgrade && yarn run dev:tests:all"
+    }
   },
   "peerDependencies": {},
   "devDependencies": {
@@ -29,6 +35,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.3",
     "npm-check": "^5.9.2"
   },
   "dependencies": {}
