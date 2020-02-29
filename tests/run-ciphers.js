@@ -1,4 +1,4 @@
-const cryptocipher = require('../index')
+const crypto = require('../index')
 
 async function runTest (verbose = (process.argv.indexOf('-v') > -1)) {
   const allCiphers = require('crypto').getCiphers()
@@ -23,11 +23,11 @@ async function runTest (verbose = (process.argv.indexOf('-v') > -1)) {
   }
 
   // Run Ciphers
-  console.info('[test:enc:start]: staring encryption suite validation task')
+  console.info('[test:enc:start]: starting encryption suite validation task')
   for (let i = 0; i < Object.keys(cipherData).length; i++) {
     const cipherName = Object.keys(cipherData)[i]
 
-    const testingSuite = await cryptocipher.fetch(cipherName).catch((e) => {
+    const testingSuite = await crypto.fetch(cipherName).catch((e) => {
       console.error(`  -> [enc:failed-test]: '${cipherName}' > 1:failed to run > ${e.message}`, cipherData[cipherName])
       failed = failed + 1
     })

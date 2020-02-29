@@ -1,4 +1,4 @@
-const cryptocipher = require('../index')
+const crypto = require('../index')
 
 async function runTest (verbose = (process.argv.indexOf('-v') > -1)) {
   // Stats
@@ -6,9 +6,9 @@ async function runTest (verbose = (process.argv.indexOf('-v') > -1)) {
   let failed = 0
 
   // Run Hashes
-  console.info('[test:hsh:start]: staring hashing suite validation task')
+  console.info('[test:hsh:start]: starting hashing suite validation task')
   for (const hash of require('crypto').getHashes()) {
-    const testSuite = await cryptocipher.fetch(hash).catch((e) => {
+    const testSuite = await crypto.fetch(hash).catch((e) => {
       failed = failed + 1
       console.info(`  -> [hsh:failed-suite]: '${hash}' > 1:failed to init > ${e.message}`)
     })
