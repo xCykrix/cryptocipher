@@ -1,0 +1,20 @@
+{
+  "name": "cryptocipher",
+  "version": "1.0.0",
+  "description": "NodeJS Native Encryption and Hashing Helper",
+  "license": "MIT",
+  "author": "Samuel J Voeller <samuel.voeller@mail.amethyst.live>",
+  "repository": "git@git.amethyst.live:amethyst-community/cryptocipher.git",
+  "engines": {
+    "node": ">=13.8.0",
+    "npm": "use-yarn",
+    "yarn": ">=1.22.0"
+  },
+  "scripts": {
+    "dev:lint": "",
+    "test:all": ""
+  },
+  "peerDependencies": {},
+  "devDependencies": {},
+  "dependencies": {}
+}
