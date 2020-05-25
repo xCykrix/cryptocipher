@@ -1,0 +1,26 @@
+name: yarn-tests
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Initialize Node.js Environment
+      uses: actions/setup-node@v1.4.2
+      with:
+        node-version: '14.x'
+
+    - name: Install Yarn Dependencies
+      run: yarn set version latest && yarn install
+
+    - name: Run Package Tests
+      run: yarn run module:build
+      timeout-minutes: 5
