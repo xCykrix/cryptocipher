@@ -1,0 +1,57 @@
+{
+  "name": "cryptocipher",
+  "version": "2.3.0-rc0",
+  "description": "Node.js Crypto module wrapper for simplifying the process of encryption, hashing, and more!",
+  "author": "Samuel J Voeller <samuel.voeller@amethyst.live>",
+  "main": "index.js",
+  "scripts": {
+    "module:maintaining": "yarn run module:maintain:update && yarn run module:maintain:upgrade",
+    "module:maintain:update": "yarn install",
+    "module:maintain:upgrade": "yarn up",
+    "module:tests": "yarn run module:test:lint && yarn run module:test:validate",
+    "module:test:lint": "eslint './**/*.js' './**/*.json'",
+    "module:test:lint+fix": "eslint './**/*.js' './**/*.json' --fix",
+    "module:test:validate": "mocha",
+    "module:build": "yarn run module:maintaining && yarn run module:tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amethyst-studio/cryptocipher.git"
+  },
+  "engines": {
+    "node": ">=8.3.0",
+    "npm": "use-yarn",
+    "yarn": ">=2.0.0"
+  },
+  "keywords": [
+    "openssl",
+    "crypto",
+    "cryptography",
+    "hashing",
+    "aes",
+    "des",
+    "diffie-hellman",
+    "ecdh",
+    "hmac"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/amethyst-studio/cryptocipher",
+  "bugs": {
+    "url": "https://github.com/amethyst-studio/cryptocipher/issues"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "concurrently": "^5.2.0",
+    "eslint": "^7.0.0",
+    "eslint-plugin-json": "^2.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "mocha": "^7.1.2"
+  },
+  "dependencies": {
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
