@@ -14,40 +14,13 @@
 
 ## Installation
 
-```sh
-npm install cryptocipher@latest # for the most recent stable build
-npm install cryptocipher@next # for the most recent nightly build
-```
+You can find the installation guide, along with much more information, on our wiki!
+[GitHub Wiki and Documentation Pages](https://github.com/amethyst-studio/cryptocipher/wiki)
 
 ## Using CryptoCipher Module
 
-### Encryption and Decryption
+https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start#encryption-and-decryption
 
-```js
-
-```
-
-### Hashing
-
-```js
-
-```
-
-### Diffie-Hellman
-
-```js
-
-```
-
-### Elliptic Curve Diffie-Hellman (ECDH)
-
-```js
-
-```
-
-### HMAC
+https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start#hashing
 
 
-```js
-
-```
