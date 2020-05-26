@@ -1,6 +1,6 @@
 {
   "name": "cryptocipher",
-  "version": "2.3.0-rc1",
+  "version": "2.3.0-rc2",
   "description": "Node.js Crypto module wrapper for simplifying the process of encryption, hashing, and more!",
   "author": "Samuel J Voeller <samuel.voeller@amethyst.live>",
   "main": "index.js",
