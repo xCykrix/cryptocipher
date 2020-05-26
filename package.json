@@ -14,6 +14,12 @@
     "module:test:validate": "mocha",
     "module:build": "yarn run module:maintaining && yarn run module:tests"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run module:test:lint",
+      "pre-push": "yarn run module:build"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amethyst-studio/cryptocipher.git"
