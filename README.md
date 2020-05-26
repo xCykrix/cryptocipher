@@ -12,15 +12,31 @@
 
 -------
 
+## What is CryptoCipher?
+
+Our project is a Node.js module designed to add ease of access to many encryption and hashing methods supplied by Node.js, while handling the security behind the scenes. Enforcing a standard set of secret key lengths and higher internal defaults will ensure that CryptoCipher will always provide the highest security possible to you, even if you are inexperienced with encryption yourself as a whole.
+
 ## Installation
 
 You can find the installation guide, along with much more information, on our wiki!
 [GitHub Wiki and Documentation Pages](https://github.com/amethyst-studio/cryptocipher/wiki)
 
-## Using CryptoCipher Module
+## Using the CryptoCipher Module
 
-https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start#encryption-and-decryption
+Below are some links to snippets from our Wiki, each using one of the core module of CryptoCipher. The will explaining on how to use them and provide examples of the their usage in each page.
 
-https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start#hashing
+https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start-Encryption
 
+https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start-Hashing
 
+https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start-RSA (NOT YET IMPLEMENTED)
+
+https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start-Diffie-Hellman (NOT YET IMPLEMENTED)
+
+https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start-ECDH (NOT YET IMPLEMENTED)
+
+https://github.com/amethyst-studio/cryptocipher/wiki/Quick-Start-HMAC (NOT YET IMPLEMENTED)
+
+## Contributing and Code of Conduct
+
+You can find out contribution guidelines in our [Contributing and Linting Section](CONTRIBUTING.md) and the code of conduct in [Code of Conduct and Safety Section](CODE_OF_CONDUCT.md) of our repository.
