@@ -1,6 +1,6 @@
 {
   "name": "cryptocipher",
-  "version": "2.3.0-rc0",
+  "version": "2.3.0-rc1",
   "description": "Node.js Crypto module wrapper for simplifying the process of encryption, hashing, and more!",
   "author": "Samuel J Voeller <samuel.voeller@amethyst.live>",
   "main": "index.js",
@@ -19,9 +19,7 @@
     "url": "git+https://github.com/amethyst-studio/cryptocipher.git"
   },
   "engines": {
-    "node": ">=8.3.0",
-    "npm": "use-yarn",
-    "yarn": ">=2.0.0"
+    "node": ">=8.3.0"
   },
   "keywords": [
     "openssl",
@@ -42,7 +40,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "concurrently": "^5.2.0",
-    "eslint": "^7.0.0",
+    "eslint": "^7.1.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-json": "^2.1.1",
@@ -50,6 +48,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
-    "mocha": "^7.1.2"
+    "mocha": "^7.2.0"
   }
 }

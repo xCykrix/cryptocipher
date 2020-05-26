@@ -574,7 +574,7 @@ __metadata:
   dependencies:
     chai: ^4.2.0
     concurrently: ^5.2.0
-    eslint: ^7.0.0
+    eslint: ^7.1.0
     eslint-config-standard: ^14.1.1
     eslint-plugin-import: ^2.20.2
     eslint-plugin-json: ^2.1.1
@@ -582,7 +582,7 @@ __metadata:
     eslint-plugin-promise: ^4.2.1
     eslint-plugin-standard: ^4.0.1
     husky: ^4.2.5
-    mocha: ^7.1.2
+    mocha: ^7.2.0
   languageName: unknown
   linkType: soft
 
@@ -918,7 +918,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.0.0":
+"eslint@npm:^7.1.0":
   version: 7.1.0
   resolution: "eslint@npm:7.1.0"
   dependencies:
@@ -1879,7 +1879,7 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"mocha@npm:^7.1.2":
+"mocha@npm:^7.2.0":
   version: 7.2.0
   resolution: "mocha@npm:7.2.0"
   dependencies:
