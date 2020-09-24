@@ -1,0 +1,62 @@
+{
+  "name": "cryptocipher",
+  "description": "Node.js crypto implementation powered by TypeScript!",
+  "version": "3.0.0-rc1",
+  "license": "MIT",
+  "author": "Samuel Voeller <samuel.voeller@amethyst.live>",
+  "contributors": [
+    "Amethyst Studio <authority@amethyst.live>"
+  ],
+  "homepage": "https://github.com/amethyst-studio/cryptocipher.git",
+  "repository": {
+    "url": "git@github.com:amethyst-studio/cryptocipher.git"
+  },
+  "main": "./dist/driver.js",
+  "types": "./dist/driver.d.ts",
+  "files": [
+    "./dist/",
+    "./package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "project:initialize": "cd build && bash initialize.sh",
+    "project:upgrade": "cd build && bash upgrade.sh",
+    "project:build": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' yarn mocha -r ts-node/register './tests/**/*.ts'"
+  },
+  "engines": {
+    "node": ">=8.17.0",
+    "npm": "use-yarn",
+    "yarn": ">=1.22.4"
+  },
+  "engineStrict": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn project:build",
+      "pre-push": "yarn project:build"
+    }
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.11.2",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "@yarnpkg/pnpify": "^2.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.9.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-with-typescript": "^19.0.1",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-tsdoc": "^0.2.7",
+    "husky": "^4.3.0",
+    "mocha": "^8.1.3",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "root": true
+}

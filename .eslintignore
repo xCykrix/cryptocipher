@@ -1,0 +1,12 @@
+# Ignore TypeScript Artifacts
+node_modules
+*.js
+*.d.ts
+*.js.map
+
+# General Project Files
+.vscode/
+.yarn/
+build/
+.editorconfig
+.gitignore
