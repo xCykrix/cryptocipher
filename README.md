@@ -1,5 +1,7 @@
 # <center> CryptoCipher v3 </center>
 
+You can view a more complete documentation at our [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki). You can also find small blog like articles there regarding the security of your workspace and how to protect all your users' personal information more effectively.
+
 ## <center> Developer Notes </center>
 
 I would like to thank everyone for using CryptoCipher so far. I really do appricate seeing the history of my package having a small following.
@@ -13,7 +15,6 @@ Some major notes of this update are as follows:
 > Documentation and Typings. If you write with TypeScript, provided typings are very helpful. Otherwise, this just provides basic documentation to your IDE for code completion and hovering.
 
 > The functionality is identical to v1 and v2. While updating to the new format, all previous encryption and hashing should still be consistent. If this is not the case, please open an issue and we can work together to either convert encrypted data or apply corrections to the algorithm implementations.
-
 
 ## <center> v3.0 Cipher Integration </center>
 
