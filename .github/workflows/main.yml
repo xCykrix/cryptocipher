@@ -25,7 +25,7 @@ jobs:
         node-version: ${{ matrix.node }}
 
     - name: Install Yarn Dependencies
-      run: yarn install && yarn up '*'
+      run: yarn set version berry && yarn set version latest && yarn install && yarn up '*'
 
     - name: Run Package Tests
       run: yarn project:build
