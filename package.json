@@ -1,7 +1,7 @@
 {
   "name": "cryptocipher",
   "description": "Node.js crypto implementation powered by TypeScript!",
-  "version": "3.0.0-rc1.0",
+  "version": "3.0.0-2",
   "license": "MIT",
   "author": "Samuel Voeller <samuel.voeller@amethyst.live>",
   "contributors": [
