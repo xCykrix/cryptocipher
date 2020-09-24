@@ -1,5 +1,4 @@
 # Ignore TypeScript Artifacts
-node_modules
 *.js
 *.d.ts
 *.js.map
@@ -8,5 +7,7 @@ node_modules
 .vscode/
 .yarn/
 build/
+dist/
+tests/
 .editorconfig
 .gitignore

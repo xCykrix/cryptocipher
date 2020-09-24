@@ -1,7 +1,7 @@
 {
   "name": "cryptocipher",
   "description": "Node.js crypto implementation powered by TypeScript!",
-  "version": "3.0.0-rc1",
+  "version": "3.0.0-rc1.0",
   "license": "MIT",
   "author": "Samuel Voeller <samuel.voeller@amethyst.live>",
   "contributors": [
@@ -19,17 +19,24 @@
     "README.md",
     "LICENSE"
   ],
-  "scripts": {
-    "project:initialize": "cd build && bash initialize.sh",
-    "project:upgrade": "cd build && bash upgrade.sh",
-    "project:build": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' yarn mocha -r ts-node/register './tests/**/*.ts'"
-  },
   "engines": {
     "node": ">=8.17.0",
     "npm": "use-yarn",
     "yarn": ">=1.22.4"
   },
   "engineStrict": true,
+  "scripts": {
+    "project:initialize": "cd build && bash initialize.sh",
+    "project:upgrade": "cd build && bash upgrade.sh",
+    "project:validate:quick": "yarn eslint --fix --ext ./src/**/*.ts --ext ./src/*.ts",
+    "project:validate:full": "yarn project:validate:quick && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' yarn mocha -r ts-node/register './tests/**/*.ts'",
+    "project:build": "yarn project:validate:full && yarn tsc --build --clean && yarn tsc --build",
+    "prepare": "yarn project:build",
+    "prepublishOnly": "yarn project:validate:quick",
+    "preversion": "yarn project:validate:quick",
+    "version": "yarn project:validate:full && git add -A .",
+    "postversion": "git push && git push --tags"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn project:build",
