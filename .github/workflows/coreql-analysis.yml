@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         node: [ '10', '12', '14' ]
-    name: Node v${{ matrix.node }} Validation
+    name: Analyze Project with NodeJS v${{ matrix.node }}
 
     steps:
     - name: CoreQL Checkout Files
@@ -26,4 +26,3 @@ jobs:
       run: rm .yarnrc.yml && yarn set version berry && yarn install
     - name: CoreQL Analysis and Testing
       run: yarn project:build
-      timeout-minutes: 3

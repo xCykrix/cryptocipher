@@ -35,7 +35,7 @@ export function fetch (identifier: string): CipherDriver | HashingDriver {
   } catch (err) {
     try {
       return getHasher(identifier)
-    } catch (err) {
+    } catch (_err) {
       throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
     }
   }
