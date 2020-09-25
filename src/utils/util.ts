@@ -1,13 +1,12 @@
 import { randomBytes } from 'crypto'
 
 export function generate (bytes: number): string {
-  // const char = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890!";#$%&\'()*+,-./:;<=>?@[]^_`{|}~'.split('')
-  const char = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
+  const char = '!"#$%&\'()*+,-.0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'.split('')
 
   let generated = ''
   while (generated.length < bytes) {
     const prng = randomBytes(1)[0] / 255
-    const gChar = char[Math.floor(prng * char.length)]
+    const gChar = char[Math.floor(prng * (char.length - 1))]
     generated = generated + gChar
   }
   return generated
