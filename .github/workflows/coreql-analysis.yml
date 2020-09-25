@@ -1,4 +1,4 @@
-name: CoreQL
+name: Code Functionality
 
 on:
   push:
@@ -7,22 +7,22 @@ on:
     branches: [ master, ch-dev/** ]
 
 jobs:
-  analyze:
+  analysis:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         node: [ '10', '12', '14' ]
-    name: Analyze Project with NodeJS v${{ matrix.node }}
+    name: Node.js v${{ matrix.node }} Analysis
 
     steps:
-    - name: CoreQL Checkout Files
+    - name: Checkout Latest Files
       uses: actions/checkout@v2
-    - name: CoreQL Initialize Runtime
+    - name: Initialize Node.js
       uses: actions/setup-node@v2.1.1
       with:
         node-version: ${{ matrix.node }}
-    - name: CoreQL Initialize Project
+    - name: Initialize Project
       run: rm .yarnrc.yml && yarn set version berry && yarn install
-    - name: CoreQL Analysis and Testing
+    - name: Analyze Project
       run: yarn project:build

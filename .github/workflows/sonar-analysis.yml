@@ -1,20 +1,24 @@
+name: Code Stability
+
 on:
-  # Trigger analysis when pushing in master or pull requests, and when creating
-  # a pull request. 
   push:
-    branches:
-      - master
+    branches: [ master, ch-dev/** ]
   pull_request:
-      types: [opened, synchronize, reopened]
-name: SonarCloudQL Analysis
+    branches: [ master, ch-dev/** ]
+  schedule:
+    - cron: '0 13 * * 5'
+
 jobs:
-  sonarcloud:
+  analysis:
     runs-on: ubuntu-latest
+    name: SonarCloud Code Analysis
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Latest Files
+      uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: SonarCloud Scan
+    - name: Analyze Project
       uses: sonarsource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
