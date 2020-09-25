@@ -1,0 +1,21 @@
+name: SonarCloudQL
+
+on:
+  push:
+    branches: [ master, ch-dev/** ]
+  pull_request:
+    branches: [ master, ch-dev/** ]
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'SonarCloudQL Checkout Files'
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: SonarCloudQL Analysis and Testing
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

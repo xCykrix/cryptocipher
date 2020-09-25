@@ -2,39 +2,33 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [master]
+    branches: [ master, ch-dev/** ]
   pull_request:
-    branches: [master]
+    branches: [ master, ch-dev/** ]
   schedule:
     - cron: '0 13 * * 5'
 
 jobs:
   analyze:
     runs-on: ubuntu-latest
-
     strategy:
       fail-fast: false
       matrix:
         language: ['javascript']
-
-    name: Analyze
+    name: Analyze CodeQL ${{ matrix.language }}
 
     steps:
-    - name: Checkout repository
+    - name: CodeQL Checkout Files
       uses: actions/checkout@v2
       with:
         fetch-depth: 2
-
     - run: git checkout HEAD^2
       if: ${{ github.event_name == 'pull_request' }}
-
-    - name: Initialize CodeQL
+    - name: CodeQL Initialize Runtime
       uses: github/codeql-action/init@v1
       with:
         languages: ${{ matrix.language }}
-
-    - name: Autobuild
+    - name: CodeQL Initialize Project
       uses: github/codeql-action/autobuild@v1
-
-    - name: Perform CodeQL Analysis
+    - name: CodeQL Analysis and Testing
       uses: github/codeql-action/analyze@v1

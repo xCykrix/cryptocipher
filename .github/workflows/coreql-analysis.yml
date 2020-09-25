@@ -2,31 +2,28 @@ name: CoreQL
 
 on:
   push:
-    branches: [ master, develop ]
+    branches: [ master, ch-dev/** ]
   pull_request:
-    branches: [ master, develop ]
+    branches: [ master, ch-dev/** ]
 
 jobs:
-  test:
-    runs-on: ubuntu-16.04
-
+  analyze:
+    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node: [ '10', '12', '14' ]
-
     name: Node v${{ matrix.node }} Validation
 
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Initialization Node.js Environment
+    - name: CoreQL Checkout Files
+      uses: actions/checkout@v2
+    - name: CoreQL Initialize Runtime
       uses: actions/setup-node@v2.1.1
       with:
         node-version: ${{ matrix.node }}
-
-    - name: Install Yarn Dependencies
+    - name: CoreQL Initialize Project
       run: rm .yarnrc.yml && yarn set version berry && yarn install
-
-    - name: Run Package Tests
+    - name: CoreQL Analysis and Testing
       run: yarn project:build
       timeout-minutes: 3
