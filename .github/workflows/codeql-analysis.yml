@@ -10,13 +10,14 @@ on:
 
 jobs:
   analyze:
-    name: Analyze
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
         language: ['javascript']
+
+    name: Analyze
 
     steps:
     - name: Checkout repository
