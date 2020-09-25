@@ -39,10 +39,10 @@ Some major notes of this update are as follows:
 ## <center> v3.0 Cipher Integration </center>
 
 ```js
-const { fetch } = require('cryptocipher')
+const { getCipher } = require('cryptocipher')
 
 async function main () {
-  const driver = fetch('aes256')
+  const driver = getCipher('aes256')
 
   const encrypted = await driver.encrypt({
     key: '12312312312312311231231231231231',
@@ -76,10 +76,10 @@ main()
 ## <center> v3.0 Hashing Integration </center>
 
 ```js
-const { fetch } = require('cryptocipher')
+const { getHasher } = require('cryptocipher')
 
 async function main () {
-  const driver = fetch('sha256')
+  const driver = getHasher('sha256')
 
   const digest_1 = await driver.digest({
     content: 'hello world',

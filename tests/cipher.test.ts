@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 import { getCiphers } from 'crypto';
-import { fetch } from '../src/driver';
-import { CipherDriver } from '../src/driver.cipher';
+import { getCipher } from '../src/driver';
 import { superify } from '../src/super/super.cipher';
 import { DecryptionContext, EncryptionContext } from '../src/types/driver';
 import { generate } from '../src/utils/util';
@@ -20,7 +19,7 @@ describe('Crypto#getCiphers: Testing integrity of all provided algorithms.', fun
             content: generate(2048)
           }
 
-          const driver = <CipherDriver> fetch(identifier)
+          const driver = getCipher(identifier)
           const encrypt = await driver.encrypt(t)
           const d: DecryptionContext = {
             key: t.key,
