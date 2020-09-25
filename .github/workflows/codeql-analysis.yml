@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         language: ['javascript']
-    name: Analyze Project with GitHub CodeQL -> ${{ matrix.language }}
+    name: Analyze Project with CodeQL
 
     steps:
     - name: CodeQL Checkout Files
