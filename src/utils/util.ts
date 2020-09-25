@@ -10,5 +10,5 @@ export function generate (bytes: number): string {
 }
 
 export function count (input: string): number {
-  return encodeURI(input).split(/%(?:u[0-9A-F]{2})?[0-9A-F]{2}|./).length - 1
+  return Buffer.byteLength(input)
 }
