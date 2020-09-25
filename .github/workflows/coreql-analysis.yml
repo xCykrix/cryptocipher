@@ -1,4 +1,4 @@
-name: yarn-tests
+name: CoreQL
 
 on:
   push:
@@ -7,8 +7,7 @@ on:
     branches: [ master, develop ]
 
 jobs:
-  tests:
-    if: "!contains(github.event.head_commit.message, 'skip ci')"
+  test:
     runs-on: ubuntu-16.04
 
     strategy:
