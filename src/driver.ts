@@ -27,8 +27,39 @@ import { superify } from './super/super.cipher'
  *
  * @readonly
  * @public
+ * @deprecated This function is now deprecated and will be removed in 3.2.0, fetch() will be replaced with fetchCipher() fetchHasher() and fetch*() effective immediately.
  */
 export function fetch (identifier: string): CipherDriver | HashingDriver {
+  try {
+    return getCipher(identifier)
+  } catch (err) {
+    try {
+      return getHasher(identifier)
+    } catch (err) {
+      throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
+    }
+  }
+}
+
+/**
+ * Obtain an instance of the requested CipherDriver.
+ *
+ * @remarks
+ *
+ * Acceptable identifiers are as follows:
+ * - Any entry from crypto#getCiphers()
+ *
+ * @param identifier - The requested CipherDriver implementation.
+ *
+ * @returns The preconfigured driver implementation of the specified identifier.
+ *
+ * @throws Error (sec:violation) - If the requested identifier is disabled or unsafe to use.
+ * @throws Error (sec:violation) - If the requested identifier is missing or unavailable.
+ *
+ * @readonly
+ * @public
+ */
+export function getCipher (identifier: string): CipherDriver {
   const disabled = superify().disabled
 
   // Check for Disabled
@@ -41,7 +72,28 @@ export function fetch (identifier: string): CipherDriver | HashingDriver {
     return new CipherDriver(identifier)
   }
 
-  // Check for Hashing
+  throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
+}
+
+/**
+ * Obtain an instance of the requested HashingDriver.
+ *
+ * @remarks
+ *
+ * Acceptable identifiers are as follows:
+ * - Any entry from crypto#getHashes()
+ *
+ * @param identifier - The requested HashingDriver implementation.
+ *
+ * @returns The preconfigured driver implementation of the specified identifier.
+ *
+ * @throws Error (sec:violation) - If the requested identifier is missing or unavailable.
+ *
+ * @readonly
+ * @public
+ */
+export function getHasher (identifier: string): HashingDriver {
+  // Check for Hasher
   if (getHashes().includes(identifier)) {
     return new HashingDriver(identifier)
   }
