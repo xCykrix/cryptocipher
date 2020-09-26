@@ -31,11 +31,7 @@
     "project:validate:quick": "yarn eslint --fix --ext ./src/**/*.ts --ext ./src/*.ts",
     "project:validate:full": "yarn project:validate:quick && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' yarn mocha -r ts-node/register './tests/**/*.ts'",
     "project:build": "yarn project:validate:full && yarn tsc --build --clean && yarn tsc --build",
-    "prepare": "yarn project:build",
-    "prepublishOnly": "yarn project:validate:quick",
-    "preversion": "yarn project:validate:quick",
-    "version": "yarn project:validate:full && git add -A .",
-    "postversion": "git push && git push --tags"
+    "prepare": "project:validate:full && yarn project:build"
   },
   "husky": {
     "hooks": {
