@@ -32,7 +32,7 @@ export class HashingDriver {
    *
    * @returns - The Promise<HashingResponse> object after processing by the algorithm.
    *
-   * @throws Error (sec:violation) - If the user provided input is an unsafe state. Please verify any input that states 'Your X length is Y' to the applicable values.
+   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Please verify the input is not blank.
    *
    * @public
    * @readonly
@@ -47,10 +47,10 @@ export class HashingDriver {
       context.digest = 'base64'
     }
 
-    const civ = createHash(this._identifier)
+    const digester = createHash(this._identifier)
 
-    civ.update(context.content)
-    let digest = civ.digest(context.digest)
+    digester.update(context.content)
+    let digest = digester.digest(context.digest)
 
     if (context.iter !== undefined && context.iter > 0) {
       context.content = digest

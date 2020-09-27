@@ -38,14 +38,13 @@ export class CipherDriver {
    *
    * @returns - The Promise<EncryptionResponse> object after processing by the algorithm.
    *
-   * @throws Error (sec:violation) - If the master table is an unsafe state. Please report any errors that contain the issues page URL, if applicable.
-   * @throws Error (sec:violation) - If the user provided input is an unsafe state. Please verify any input that states 'Your X length is Y' to the applicable values.
+   * @throws Error (sec:violation:OOB_keyLength) - If the user provided input is in an unsafe state. Please verify the key length meets the requirements of the algorithm.
+   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Please verify the input is not blank.
    *
    * @public
    * @readonly
    */
   async encrypt (context: EncryptionContext): Promise<EncryptionResponse> {
-    // Verify User Input Integrity
     if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
     }
@@ -54,8 +53,7 @@ export class CipherDriver {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
-    // Build Instance
-    const bubble = {
+    const convertedctx = {
       identifier: this._identifier,
       key: context.key,
       content: context.content,
@@ -74,19 +72,19 @@ export class CipherDriver {
     }
 
     // @ts-expect-error: I really dont know how to make this into the acceptable format of overloads, so we are just going to pretend it doesn't exist.
-    const civ = createCipheriv(bubble.identifier, bubble.key, bubble.vector, optional)
+    const civ = createCipheriv(convertedctx.identifier, convertedctx.key, convertedctx.vector, optional)
 
     try {
-      civ.setAAD(Buffer.from(bubble.aad, 'hex'), {
-        plaintextLength: count(bubble.content)
+      civ.setAAD(Buffer.from(convertedctx.aad, 'hex'), {
+        plaintextLength: count(convertedctx.content)
       })
     } catch (ignored) { /* ignored */ }
 
-    const encrypted = Buffer.concat([civ.update(bubble.content), civ.final()])
+    const encrypted = Buffer.concat([civ.update(convertedctx.content), civ.final()])
 
     const r: EncryptionResponse = {
-      content: bubble.vector + '/' + encrypted.toString('hex'),
-      aad: bubble.aad
+      content: convertedctx.vector + '/' + encrypted.toString('hex'),
+      aad: convertedctx.aad
     }
 
     try {
@@ -103,14 +101,13 @@ export class CipherDriver {
    *
    * @returns - The Promise<DecryptionResponse> object after processing by the algorithm.
    *
-   * @throws Error (sec:violation) - If the master table is an unsafe state. Please report any errors that contain the issues page URL, if applicable.
-   * @throws Error (sec:violation) - If the user provided input is an unsafe state. Please verify any input that states 'Your X length is Y' to the applicable values.
+   * @throws Error (sec:violation:OOB_keyLength) - If the user provided input is in an unsafe state. Please verify the key length meets the requirements of the algorithm.
+   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Please verify the input is not blank.
    *
    * @public
    * @readonly
    */
   async decrypt (context: DecryptionContext): Promise<DecryptionResponse> {
-    // Verify User Input Integrity
     if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
     }
@@ -119,7 +116,7 @@ export class CipherDriver {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
-    const bubble = {
+    const convertedctx = {
       identifier: this._identifier,
       key: context.key,
       aad: context.aad,
@@ -139,23 +136,23 @@ export class CipherDriver {
     }
 
     // @ts-expect-error: I really dont know how to make this into the acceptable format of overloads, so we are just going to pretend it doesn't exist.
-    const div = createDecipheriv(bubble.identifier, bubble.key, bubble.vector, optional)
+    const div = createDecipheriv(convertedctx.identifier, convertedctx.key, convertedctx.vector, optional)
 
     /* istanbul ignore else */
-    if (bubble.tag !== undefined) {
-      div.setAuthTag(Buffer.from(bubble.tag, 'hex'))
+    if (convertedctx.tag !== undefined) {
+      div.setAuthTag(Buffer.from(convertedctx.tag, 'hex'))
     }
 
     /* istanbul ignore else */
-    if (bubble.aad !== undefined) {
+    if (convertedctx.aad !== undefined) {
       try {
-        div.setAAD(Buffer.from(bubble.aad, 'hex'), {
-          plaintextLength: bubble.content.length
+        div.setAAD(Buffer.from(convertedctx.aad, 'hex'), {
+          plaintextLength: convertedctx.content.length
         })
       } catch (ignored) { /* ignored */ }
     }
 
-    const decrypted = Buffer.concat([div.update(bubble.content), div.final()])
+    const decrypted = Buffer.concat([div.update(convertedctx.content), div.final()])
 
     return {
       content: decrypted.toString()

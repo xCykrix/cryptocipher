@@ -1,15 +1,27 @@
 import { randomBytes } from 'crypto'
 
-export function generate (bytes: number): string {
-  const char = '!"#$%&\'()*+,-.0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'.split('')
+const keys: string[] = []
+let build = false
 
-  let generated = ''
-  while (generated.length < bytes) {
-    const prng = randomBytes(1)[0] / 255
-    const gChar = char[Math.floor(prng * (char.length - 1))]
-    generated = generated + gChar
+function init (): void {
+  for (let i = 0x0020; i < 0x007f; i++) {
+    if (i === 0x002F) continue
+    keys.push(String.fromCharCode(i))
   }
-  return generated
+}
+
+export function generate (bytes: number): string {
+  if (!build) {
+    init()
+    build = true
+  }
+
+  let r = ''
+  while (r.length < bytes) {
+    const chr = keys[Math.floor((randomBytes(1)[0] / 255) * (keys.length - 1))]
+    r = r + chr
+  }
+  return r
 }
 
 export function count (input: string): number {
