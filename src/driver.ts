@@ -27,7 +27,7 @@ import { superify } from './super/super.cipher'
  *
  * @readonly
  * @public
- * @deprecated This function is now deprecated and will be removed in 3.2.0, fetch() will be replaced with fetchCipher() fetchHasher() and fetch*() effective immediately.
+ * @deprecated This function is now deprecated and will be removed in 3.2.0, fetch() will be replaced with getCipher() getHasher() and get[Feature]() effective immediately.
  */
 export function fetch (identifier: string): CipherDriver | HashingDriver {
   try {

@@ -39,7 +39,7 @@ export class HashingDriver {
    */
   async digest (context: HashingContext): Promise<HashingResponse> {
     if (typeof context?.content !== 'string' || context?.content?.length < 1) {
-      throw new Error(`sec:violation:OOB_content: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
+      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
     const encodings: HexBase64Latin1Encoding[] = ['latin1', 'base64', 'hex']

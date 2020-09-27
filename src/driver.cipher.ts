@@ -45,24 +45,13 @@ export class CipherDriver {
    * @readonly
    */
   async encrypt (context: EncryptionContext): Promise<EncryptionResponse> {
-    // Verify Superify Integrity
-    if (typeof this._bounds?.ivLength !== 'number' || this._bounds?.ivLength <= -1) {
-      throw new Error(`sec:violation:OOB_ivLength: ${this._identifier} has violated the internal security policy of this package. Please report this error to https://github.com/amethyst-studio/cryptocipher for assistance.`)
-    }
-    if (typeof this._bounds?.tagLength !== 'number' || this._bounds?.tagLength <= -1) {
-      throw new Error(`sec:violation:OOB_tagLength: ${this._identifier} has violated the internal security policy of this package. Please report this error to https://github.com/amethyst-studio/cryptocipher for assistance.`)
-    }
-    if (typeof this._bounds?.keyLength !== 'number' || this._bounds?.keyLength <= -1) {
-      throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. If you believe this is a bug, please report this error to https://github.com/amethyst-studio/cryptocipher for assistance.`)
-    }
-
     // Verify User Input Integrity
     if (typeof context?.key !== 'string' || count(context?.key) < this._bounds?.keyLength || count(context?.key) > this._bounds?.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
     }
 
     if (typeof context?.content !== 'string' || context?.content?.length < 1) {
-      throw new Error(`sec:violation:OOB_content: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
+      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
     // Build Instance
@@ -120,24 +109,13 @@ export class CipherDriver {
    * @readonly
    */
   async decrypt (context: DecryptionContext): Promise<DecryptionResponse> {
-    // Verify Superify Integrity
-    if (typeof this._bounds?.ivLength !== 'number' || this._bounds?.ivLength <= -1) {
-      throw new Error(`sec:violation:OOB_ivLength: ${this._identifier} has violated the internal security policy of this package. Please report this error to https://github.com/amethyst-studio/cryptocipher for assistance.`)
-    }
-    if (typeof this._bounds?.tagLength !== 'number' || this._bounds?.tagLength <= -1) {
-      throw new Error(`sec:violation:OOB_tagLength: ${this._identifier} has violated the internal security policy of this package. Please report this error to https://github.com/amethyst-studio/cryptocipher for assistance.`)
-    }
-    if (typeof this._bounds?.keyLength !== 'number' || this._bounds?.keyLength <= -1) {
-      throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. If you believe this is a bug, please report this error to https://github.com/amethyst-studio/cryptocipher for assistance.`)
-    }
-
     // Verify User Input Integrity
     if (typeof context?.key !== 'string' || count(context?.key) < this._bounds?.keyLength || count(context?.key) > this._bounds?.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
     }
 
     if (typeof context?.content !== 'string' || context?.content?.length < 1) {
-      throw new Error(`sec:violation:OOB_content: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
+      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
     const bubble = {
