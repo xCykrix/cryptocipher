@@ -28,6 +28,7 @@
   "scripts": {
     "initialize": "cd build && bash initialize.sh",
     "upgrade": "cd build && bash upgrade.sh",
+    "lint-only": "yarn eslint --ext ./src/**/*.ts --ext ./src/*.ts",
     "lint": "yarn eslint --fix --ext ./src/**/*.ts --ext ./src/*.ts",
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' yarn mocha -r ts-node/register './tests/**/*.ts'",
     "coverage": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' yarn nyc mocha -r ts-node/register './tests/**/*.ts'",
