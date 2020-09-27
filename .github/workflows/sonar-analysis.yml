@@ -18,6 +18,14 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
+    - name: Initialize Node.js
+      uses: actions/setup-node@v2.1.1
+      with:
+        node-version: '14'
+    - name: Initialize Project
+      run: rm .yarnrc.yml && yarn set version berry && yarn install
+    - name: Analyze Project
+      run: yarn coverage
     - name: Analyze Project
       uses: sonarsource/sonarcloud-github-action@master
       env:
