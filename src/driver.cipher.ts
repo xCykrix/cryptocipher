@@ -46,11 +46,11 @@ export class CipherDriver {
    */
   async encrypt (context: EncryptionContext): Promise<EncryptionResponse> {
     // Verify User Input Integrity
-    if (typeof context?.key !== 'string' || count(context?.key) < this._bounds?.keyLength || count(context?.key) > this._bounds?.keyLength) {
+    if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
     }
 
-    if (typeof context?.content !== 'string' || context?.content?.length < 1) {
+    if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
@@ -68,7 +68,8 @@ export class CipherDriver {
     }
     const optional: Optional = {}
 
-    if (this._bounds?.tagLength > -1) {
+    /* istanbul ignore else */
+    if (this._bounds.tagLength > -1) {
       optional.authTagLength = this._bounds.tagLength
     }
 
@@ -110,11 +111,11 @@ export class CipherDriver {
    */
   async decrypt (context: DecryptionContext): Promise<DecryptionResponse> {
     // Verify User Input Integrity
-    if (typeof context?.key !== 'string' || count(context?.key) < this._bounds?.keyLength || count(context?.key) > this._bounds?.keyLength) {
+    if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
     }
 
-    if (typeof context?.content !== 'string' || context?.content?.length < 1) {
+    if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
@@ -132,17 +133,21 @@ export class CipherDriver {
     }
     const optional: Optional = {}
 
-    if (this._bounds?.tagLength > -1) {
+    /* istanbul ignore else */
+    if (this._bounds.tagLength > -1) {
       optional.authTagLength = this._bounds.tagLength
     }
 
     // @ts-expect-error: I really dont know how to make this into the acceptable format of overloads, so we are just going to pretend it doesn't exist.
     const div = createDecipheriv(bubble.identifier, bubble.key, bubble.vector, optional)
 
-    if (bubble?.tag !== undefined) {
+    /* istanbul ignore else */
+    if (bubble.tag !== undefined) {
       div.setAuthTag(Buffer.from(bubble.tag, 'hex'))
     }
-    if (bubble?.aad !== undefined) {
+
+    /* istanbul ignore else */
+    if (bubble.aad !== undefined) {
       try {
         div.setAAD(Buffer.from(bubble.aad, 'hex'), {
           plaintextLength: bubble.content.length
