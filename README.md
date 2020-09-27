@@ -2,25 +2,36 @@
 
 You can view a more complete documentation at our [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki). You can also find small blog like articles there regarding the security of your workspace and how to protect all your users' personal information more effectively.
 
-![Discord](https://img.shields.io/discord/175388071448018944?label=Chat%20with%20Us&logo=Discord&logoColor=white&style=for-the-badge)
-[![NPM Downloads](https://img.shields.io/npm/dt/cryptocipher.svg?style=for-the-badge)](https://www.npmjs.com/package/cryptocipher)
-[![NPM Downloads](https://img.shields.io/npm/dm/cryptocipher.svg?style=for-the-badge)](https://www.npmjs.com/package/cryptocipher)
-![Dependents (via libraries.io)](https://img.shields.io/librariesio/dependents/npm/cryptocipher?style=for-the-badge)
+![Discord](https://img.shields.io/discord/175388071448018944?label=Discord&logo=Discord&logoColor=white)
+![NPM Downloads](https://img.shields.io/npm/dt/cryptocipher.svg?label=All%20Downloads)
+![NPM Downloads](https://img.shields.io/npm/dm/cryptocipher.svg?label=Monthly%20Downloads)
 
-[![Forks](https://img.shields.io/github/forks/amethyst-studio/cryptocipher.svg?style=for-the-badge)](https://github.com/amethyst-studio/cryptocipher)
-[![Stars](https://img.shields.io/github/stars/amethyst-studio/cryptocipher.svg?style=for-the-badge)](https://github.com/amethyst-studio/cryptocipher)
-![GitHub issues](https://img.shields.io/github/issues/amethyst-studio/cryptocipher?logo=git&style=for-the-badge)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/amethyst-studio/cryptocipher?style=for-the-badge)
-[![License](https://img.shields.io/github/license/amethyst-studio/cryptocipher.svg?style=for-the-badge)](https://github.com/amethyst-studio/cryptocipher)
+![Forks](https://img.shields.io/github/forks/amethyst-studio/cryptocipher.svg?label=Forks)
+![Stars](https://img.shields.io/github/stars/amethyst-studio/cryptocipher.svg?label=Stars)
+![GitHub issues](https://img.shields.io/github/issues/amethyst-studio/cryptocipher?label=Issues&logo=git)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/amethyst-studio/cryptocipher?label=Pull%20Requests&logo=git)
+![License](https://img.shields.io/github/license/amethyst-studio/cryptocipher.svg?label=Project%20License)
 
-![node](https://img.shields.io/node/v/cryptocipher?style=for-the-badge)
-[![NPM Latest Version](https://img.shields.io/npm/v/cryptocipher.svg?style=for-the-badge)](https://www.npmjs.com/package/cryptocipher)
-[![Dependency Status](https://img.shields.io/david/amethyst-studio/cryptocipher.svg?style=for-the-badge)](https://david-dm.org/amethyst-studio/cryptocipher)
-[![devDependency Status](https://img.shields.io/david/dev/amethyst-studio/cryptocipher.svg?style=for-the-badge)](https://david-dm.org/amethyst-studio/cryptocipher#info=devDependencies)
+![Node Version](https://img.shields.io/node/v/cryptocipher?label=Node.js&logo=Node.js)
+![NPM  Version](https://img.shields.io/npm/v/cryptocipher.svg?label=NPM&logo=NPM)
+![Dependency Status](https://img.shields.io/david/amethyst-studio/cryptocipher.svg?label=Dependancy%20Status)
+![devDependency Status](https://img.shields.io/david/dev/amethyst-studio/cryptocipher.svg?label=Dev%20Dependancy%20Status)
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/amethyst-studio/cryptocipher/yarn-tests/master?label=Stable%20Build&style=for-the-badge)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/amethyst-studio/cryptocipher/yarn-tests/develop?label=Beta%20Build&style=for-the-badge)
-![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/amethyst-studio/cryptocipher?style=for-the-badge)
+![GitHub Workflow Status (master)](https://img.shields.io/github/workflow/status/amethyst-studio/cryptocipher/yarn-tests/master?label=Workflows%20(Stable))
+![GitHub Workflow Status (master)](https://img.shields.io/github/workflow/status/amethyst-studio/cryptocipher/yarn-tests/testing?label=Workflows%20(Testing))
+
+![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=alert_status)
+![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=ncloc)
+![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=code_smells)
+![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=vulnerabilities)
+![Bugs](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=bugs)
+
+![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=security_rating)
+![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=sqale_rating)
+![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=reliability_rating)
+
+
+
 
 ## <center> Developer Notes </center>
 
