@@ -12,7 +12,7 @@ yarn dlx @yarnpkg/pnpify --sdk vscode
 sleep 3
 
 echo "[project:initialize] do:task/upgrade"
-yarn project:upgrade
+yarn upgrade
 sleep 3
 
 echo "[project:initialize] Completed Initialization of Project . . ."

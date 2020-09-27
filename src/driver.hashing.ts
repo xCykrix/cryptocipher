@@ -38,12 +38,12 @@ export class HashingDriver {
    * @readonly
    */
   async digest (context: HashingContext): Promise<HashingResponse> {
-    if (typeof context?.content !== 'string' || context?.content?.length < 1) {
-      throw new Error(`sec:violation:OOB_content: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
+    if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
+      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
     const encodings: HexBase64Latin1Encoding[] = ['latin1', 'base64', 'hex']
-    if (typeof context?.digest !== 'string' || !encodings.includes(context.digest)) {
+    if (context.digest === undefined || typeof context.digest !== 'string' || !encodings.includes(context.digest)) {
       context.digest = 'base64'
     }
 
@@ -52,7 +52,7 @@ export class HashingDriver {
     civ.update(context.content)
     let digest = civ.digest(context.digest)
 
-    if (context?.iter !== undefined && context?.iter > 0) {
+    if (context.iter !== undefined && context.iter > 0) {
       context.content = digest
       context.iter = context.iter - 1
       const r = await this.digest(context)

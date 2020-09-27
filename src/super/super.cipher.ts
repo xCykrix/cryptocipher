@@ -705,7 +705,8 @@ const parentSuper: Superify = {
     'id-aes128-wrap': {
       ivLength: 8,
       keyLength: 16,
-      tagLength: 128
+      tagLength: 128,
+      disabled: true
     },
     'id-aes128-wrap-pad': {
       ivLength: 4,
@@ -725,7 +726,8 @@ const parentSuper: Superify = {
     'id-aes192-wrap': {
       ivLength: 8,
       keyLength: 24,
-      tagLength: 128
+      tagLength: 128,
+      disabled: true
     },
     'id-aes192-wrap-pad': {
       ivLength: 4,
@@ -745,7 +747,8 @@ const parentSuper: Superify = {
     'id-aes256-wrap': {
       ivLength: 8,
       keyLength: 32,
-      tagLength: 128
+      tagLength: 128,
+      disabled: true
     },
     'id-aes256-wrap-pad': {
       ivLength: 4,

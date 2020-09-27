@@ -25,4 +25,4 @@ jobs:
     - name: Initialize Project
       run: rm .yarnrc.yml && yarn set version berry && yarn install
     - name: Analyze Project
-      run: yarn project:build
+      run: yarn lint-only && yarn test && yarn build
