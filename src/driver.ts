@@ -46,15 +46,14 @@ export function fetch (identifier: string): CipherDriver | HashingDriver {
  *
  * @remarks
  *
- * Acceptable identifiers are as follows:
- * - Any entry from crypto#getCiphers()
+ * Accepts any supported Node.js Encryption Algorithm. You can find a list of supported algorithms with the https://nodejs.org/api/crypto.html#crypto_crypto_getciphers function.
  *
  * @param identifier - The requested CipherDriver implementation.
  *
- * @returns The preconfigured driver implementation of the specified identifier.
+ * @returns The preconfigured driver implementation from the requested identifier.
  *
- * @throws Error (sec:violation) - If the requested identifier is disabled or unsafe to use.
- * @throws Error (sec:violation) - If the requested identifier is missing or unavailable.
+ * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or considered unstable.
+ * @throws Error (sec:violation:id_missing)  - If the requested identifier is missing or unavailable. Please report this error to https://github.com/amethyst-studio/cryptocipher/
  *
  * @readonly
  * @public
@@ -80,14 +79,13 @@ export function getCipher (identifier: string): CipherDriver {
  *
  * @remarks
  *
- * Acceptable identifiers are as follows:
- * - Any entry from crypto#getHashes()
+ * Accepts any supported Node.js Hashing Algorithm. You can find a list of supported algorithms with the https://nodejs.org/api/crypto.html#crypto_crypto_gethashes function.
  *
  * @param identifier - The requested HashingDriver implementation.
  *
- * @returns The preconfigured driver implementation of the specified identifier.
+ * @returns The preconfigured driver implementation from the requested identifier.
  *
- * @throws Error (sec:violation) - If the requested identifier is missing or unavailable.
+ * @throws Error (sec:violation:id_missing) - If the requested identifier is missing or unavailable.
  *
  * @readonly
  * @public
