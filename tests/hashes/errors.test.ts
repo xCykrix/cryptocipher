@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import { getHashes } from 'crypto';
 import { getHasher } from '../../src/driver';
 
 describe('hasher: (error) the hasher runtime builder should error when in these states', function () {
