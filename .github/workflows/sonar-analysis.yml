@@ -2,9 +2,9 @@ name: Code Stability
 
 on:
   push:
-    branches: [ master, ch-dev/** ]
+    branches: [ main, develop, ch-dev/** ]
   pull_request:
-    branches: [ master, ch-dev/** ]
+    branches: [ main, develop, ch-dev/** ]
   schedule:
     - cron: '0 13 * * 5'
 
