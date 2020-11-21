@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        language: ['javascript']
+        language: [ 'javascript' ]
     name: GitHub CodeQL Analysis
 
     steps:

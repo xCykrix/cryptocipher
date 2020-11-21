@@ -5,12 +5,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'weekly'
     assignees:
-      - "xCykrix"
+      - 'xCykrix'
     labels:
-      - "dependencies"
-      - "security"
+      - 'dependencies'
+      - 'security'
