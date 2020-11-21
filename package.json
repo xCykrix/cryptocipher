@@ -69,25 +69,26 @@
     "@typescript-eslint/parser": "^4.0.1",
     "@yarnpkg/pnpify": "^2.1.0",
     "chai": "^4.2.0",
-    "eslint": "^7.10.0",
-    "eslint-config-standard": "^14.1.1",
+    "eslint": "^7.14.0",
+    "eslint-config-standard": "^16.0.2",
     "eslint-config-standard-with-typescript": "^19.0.1",
     "eslint-import-resolver-node": "^0.3.4",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-standard": "^4.1.0",
     "eslint-plugin-tsdoc": "^0.2.7",
     "husky": "^4.3.0",
-    "mocha": "^8.1.3",
+    "mocha": "^8.2.1",
     "node-preload": "^0.2.1",
     "nyc": "^15.1.0",
     "source-map-support": "^0.5.19",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.1.2"
   },
   "resolutions": {
-    "node-preload": "0.2.0"
+    "node-preload": "0.2.0",
+    "typescript": "latest"
   },
   "root": true
 }
