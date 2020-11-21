@@ -87,7 +87,7 @@
     "typescript": "^4.1.2"
   },
   "resolutions": {
-    "node-preload": "0.2.0",
+    "node-preload": "0.2.1",
     "typescript": "latest"
   },
   "root": true
