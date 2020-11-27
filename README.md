@@ -2,14 +2,14 @@
 
 You can view a more complete documentation at our [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki). You can also find small blog like articles there regarding the security of your workspace and how to protect all your users' personal information more effectively.
 
-![Discord](https://img.shields.io/discord/175388071448018944?label=Discord&logo=Discord&logoColor=white)
+[![Discord](https://img.shields.io/discord/175388071448018944?label=Discord&logo=Discord&logoColor=white)](https://chat.amethyst.live/)
 ![NPM Downloads](https://img.shields.io/npm/dt/cryptocipher.svg?label=All%20Downloads)
 ![NPM Downloads](https://img.shields.io/npm/dm/cryptocipher.svg?label=Monthly%20Downloads)
 
 ![Forks](https://img.shields.io/github/forks/amethyst-studio/cryptocipher.svg?label=Forks)
 ![Stars](https://img.shields.io/github/stars/amethyst-studio/cryptocipher.svg?label=Stars)
-![GitHub issues](https://img.shields.io/github/issues/amethyst-studio/cryptocipher?label=Issues&logo=git)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/amethyst-studio/cryptocipher?label=Pull%20Requests&logo=git)
+[![GitHub issues](https://img.shields.io/github/issues/amethyst-studio/cryptocipher?label=Issues&logo=git)](https://github.com/amethyst-studio/cryptocipher)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/amethyst-studio/cryptocipher?label=Pull%20Requests&logo=git)](https://github.com/amethyst-studio/cryptocipher)
 ![License](https://img.shields.io/github/license/amethyst-studio/cryptocipher.svg?label=Project%20License)
 
 ![Node Version](https://img.shields.io/node/v/cryptocipher?label=Node.js&logo=Node.js)
