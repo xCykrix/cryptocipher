@@ -5,6 +5,28 @@
   "license": "MIT",
   "author": "Samuel J Voeller <samuel.voeller@amethyst.live> (https://chat.amethyst.live/)",
   "contributors": [],
+  "keywords": [
+    "aes",
+    "cipher",
+    "crypto",
+    "cryptography",
+    "cryptohash",
+    "decryption",
+    "encryption",
+    "hashes",
+    "hashing",
+    "library",
+    "no-dependencies",
+    "node",
+    "node-js",
+    "nodejs",
+    "npm",
+    "npm-package",
+    "npmjs",
+    "sha",
+    "ts",
+    "typescript"
+  ],
   "homepage": "https://github.com/amethyst-studio/cryptocipher",
   "repository": {
     "url": "git@github.com/amethyst-studio/cryptocipher.git"
