@@ -1,36 +1,31 @@
 ---
 name: Bug Report
-about: Create a report to help the project improve!
-title: "[BUG] Brief description of the report."
-labels: bug
+about: Report an issue with cryptocipher
+title: '[BUG] Generalized Overview of the Report Here'
+labels: 'Type: Bug, State: Conversation, Status: Unassigned'
 assignees: ''
-
 ---
 
-**Describe the Bug**
+**Describe the bug**
 A clear and concise description of what the bug is.
 
-**Reproducible Steps**
+**To Reproduce**
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. Installation commands to use.
+2. Setup the environment in this way.
+3. Snippet of how you can reproduce it consistently
+4. Any errors that may be generated.
 
-**Received Behavior**
-A clear and concise description of what you believe actually happened.
-
-**Expected Behavior**
+**Expected behavior**
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**System Information (please complete the following information):**
- - OS: [e.g. Windows]
- - Version [e.g. 2..0]
- - Implementation [e.g. encryption, decryption, hashing]
- - Suite [e.g. aes-256]
+**Current Installation:**
+ - Device: Desktop or Server
+ - OS: `uname -a` or Windows Version if you are 32 or 64 bit OS.
+ - Version: `npm list | grep 'cryptocipher'`
 
-**Additional Context**
+**Additional context**
 Add any other context about the problem here.

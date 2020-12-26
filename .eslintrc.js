@@ -6,8 +6,7 @@ module.exports = {
     ecmaFeatures: {
       impliedStrict: true
     },
-    tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json']
+    project: './tsconfig.json'
   },
   plugins: [
     '@typescript-eslint',
@@ -17,10 +16,14 @@ module.exports = {
     'eslint:recommended',
     'standard-with-typescript'
   ],
+  ignorePatterns: [
+    '/dist/',
+    '/docs/'
+  ],
   env: {
-    es6: true
+    mocha: true
   },
   rules: {
-    "tsdoc/syntax": "warn"
+    'tsdoc/syntax': 'warn'
   }
 }

@@ -1,120 +1,33 @@
-# <center> CryptoCipher v3 </center>
+# cryptocipher
 
-You can view a more complete documentation at our [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki). You can also find small blog like articles there regarding the security of your workspace and how to protect all your users' personal information more effectively.
+cryptocipher Node.js simplified cryptography implementation, powered by TypeScript
 
-[![Discord](https://img.shields.io/discord/175388071448018944?label=Discord&logo=Discord&logoColor=white)](https://chat.amethyst.live/)
-![NPM Downloads](https://img.shields.io/npm/dt/cryptocipher.svg?label=All%20Downloads)
-![NPM Downloads](https://img.shields.io/npm/dm/cryptocipher.svg?label=Monthly%20Downloads)
+## Installation
 
-![Forks](https://img.shields.io/github/forks/amethyst-studio/cryptocipher.svg?label=Forks)
-![Stars](https://img.shields.io/github/stars/amethyst-studio/cryptocipher.svg?label=Stars)
-[![GitHub issues](https://img.shields.io/github/issues/amethyst-studio/cryptocipher?label=Issues&logo=git)](https://github.com/amethyst-studio/cryptocipher)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/amethyst-studio/cryptocipher?label=Pull%20Requests&logo=git)](https://github.com/amethyst-studio/cryptocipher)
-![License](https://img.shields.io/github/license/amethyst-studio/cryptocipher.svg?label=Project%20License)
+Using your preferred Node.js Package Manager. In the following commands, we will be using npm:
 
-![Node Version](https://img.shields.io/node/v/cryptocipher?label=Node.js&logo=Node.js)
-![NPM  Version](https://img.shields.io/npm/v/cryptocipher.svg?label=NPM&logo=NPM)
-![Dependency Status](https://img.shields.io/david/amethyst-studio/cryptocipher.svg?label=Dependancy%20Status)
-![devDependency Status](https://img.shields.io/david/dev/amethyst-studio/cryptocipher.svg?label=Dev%20Dependancy%20Status)
-
-![GitHub Workflow Status (master)](https://img.shields.io/github/workflow/status/amethyst-studio/cryptocipher/yarn-tests/master?label=Workflows%20(Stable))
-![GitHub Workflow Status (master)](https://img.shields.io/github/workflow/status/amethyst-studio/cryptocipher/yarn-tests/testing?label=Workflows%20(Testing))
-
-![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=alert_status)
-![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=ncloc)
-![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=code_smells)
-![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=vulnerabilities)
-![Bugs](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=bugs)
-
-![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=security_rating)
-![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=sqale_rating)
-![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=amethyst-studio_cryptocipher&metric=reliability_rating)
-
-
-
-
-## <center> Developer Notes </center>
-
-I would like to thank everyone for using CryptoCipher so far. I really do appricate seeing the history of my package having a small following.
-
-This announces the official v3.0.0 of CryptoCipher. With this release, the **entire** codebase has been rewritten to TypeScript to provide typings to those who use TypeScript and ensure a more consistent and secure development environment moving forward.
-
-Some major notes of this update are as follows:
-
-> **IMPORTANT MIGRATION**: All Encryption, Decryption, and Hashing now use a single "context" object as their input. This is to allow more flexability of new features or contributions in the input without the garbage function parameters I had before... I don't know why I didn't just start with this haha...
-
-> Documentation and Typings. If you write with TypeScript, provided typings are very helpful. Otherwise, this just provides basic documentation to your IDE for code completion and hovering.
-
-> The functionality is identical to v1 and v2. While updating to the new format, all previous encryption and hashing should still be consistent. If this is not the case, please open an issue and we can work together to either convert encrypted data or apply corrections to the algorithm implementations.
-
-## <center> v3.0 Cipher Integration </center>
-
-```js
-const { getCipher } = require('cryptocipher')
-
-async function main () {
-  const driver = getCipher('aes256')
-
-  const encrypted = await driver.encrypt({
-    key: '12312312312312311231231231231231',
-    content: 'hello world'
-  })
-  console.info(encrypted)
-  /*
-  {
-    content: '&7MUiLET-k=MmFX]/e56ab59568c98460ee8812cc1a51477b',
-    aad: 'EUCH9&Px_@'
-  }
-  */
-
-  const decrypted = await driver.decrypt({
-    key: '12312312312312311231231231231231',
-    content: encrypted.content,
-    aad: encrypted.aad, // required if provided by encrypted
-    tag: encrypted.tag // required if provided by encrypted
-  })
-  console.info(decrypted)
-  /*
-  {
-    content: 'hello world'
-  }
-  */
-}
-main()
-
+```bash
+npm install cryptocipher
 ```
 
-## <center> v3.0 Hashing Integration </center>
+## Examples
 
-```js
-const { getHasher } = require('cryptocipher')
+You can visit our [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki) for information in setting up and using this service.
 
-async function main () {
-  const driver = getHasher('sha256')
+If you are ever having any trouble, I would greatly recommend visiting the Wiki or opening a discussion to ask us questions directly. Issues will be converted to discussions if they do not follow the pre-determined issue templates.
 
-  const digest_1 = await driver.digest({
-    content: 'hello world',
-    digest: 'hex' // or base64, latin1
-  })
-  console.info(digest_1)
-  /*
-  {
-    content: 'b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9'
-  }
-  */
+## API Documentation
 
-  const digest_2 = await driver.digest({
-    content: 'hello world',
-    digest: 'hex', // or base64, latin1
-    iter: 300 // self iterate 300 times (passwords!)
-  })
-  console.info(digest_2)
-  /*
-  {
-    content: 'd20ce3fe12c1b938ccd5346227cd5452cef7d345aff379300685f32ab56b753e'
-  }
-  */
-}
+You can find our API Auto-Generated Documentation available at our [GitHub Pages](https://amethyst-studio.github.io/cryptocipher/index.html).
 
-main()
-```
+## Contributing
+
+Pull requests are always welcome for all of our projects. If you have an adapter you would like to see, you can either create it yourself and copy one of our existing tests or create an issue and we will gladly look into adding support for you.
+If you intend to provide any underlying changes to the API, please open a discussion first so we can collaborate on the changes you intend to integrate to ensure data consistency. Pull Requests may be delayed or rejected if you do not reach out first and create significant changes.
+
+## Code of Conduct
+
+You can find more information on the Code of Conduct by visiting [Contributor Covenant's](https://www.contributor-covenant.org/) Official Website.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
