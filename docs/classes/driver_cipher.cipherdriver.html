@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for cryptocipher">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -53,10 +52,13 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../globals.html">Globals</a>
+					<a href="../modules.html">cryptocipher</a>
 				</li>
 				<li>
-					<a href="cipherdriver.html">CipherDriver</a>
+					<a href="../modules/driver_cipher.html">driver.cipher</a>
+				</li>
+				<li>
+					<a href="driver_cipher.cipherdriver.html">CipherDriver</a>
 				</li>
 			</ul>
 			<h1>Class CipherDriver</h1>
@@ -97,22 +99,22 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="cipherdriver.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="driver_cipher.cipherdriver.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="cipherdriver.html#_bounds" class="tsd-kind-icon">_bounds</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="cipherdriver.html#_identifier" class="tsd-kind-icon">_identifier</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="cipherdriver.html#_superify" class="tsd-kind-icon">_superify</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="driver_cipher.cipherdriver.html#_bounds" class="tsd-kind-icon">_bounds</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="driver_cipher.cipherdriver.html#_identifier" class="tsd-kind-icon">_identifier</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="driver_cipher.cipherdriver.html#_superify" class="tsd-kind-icon">_superify</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cipherdriver.html#decrypt" class="tsd-kind-icon">decrypt</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cipherdriver.html#encrypt" class="tsd-kind-icon">encrypt</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="driver_cipher.cipherdriver.html#decrypt" class="tsd-kind-icon">decrypt</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="driver_cipher.cipherdriver.html#encrypt" class="tsd-kind-icon">encrypt</a></li>
 							</ul>
 						</section>
 					</div>
@@ -124,13 +126,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Cipher<wbr>Driver<span class="tsd-signature-symbol">(</span>identifier<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cipherdriver.html" class="tsd-signature-type">CipherDriver</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Cipher<wbr>Driver<span class="tsd-signature-symbol">(</span>identifier<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="driver_cipher.cipherdriver.html" class="tsd-signature-type" data-tsd-kind="Class">CipherDriver</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/3cd835e/lib/driver.cipher.ts#L20">driver.cipher.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/1907750/lib/driver.cipher.ts#L20">driver.cipher.ts:20</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -147,13 +149,11 @@
 								<li>
 									<h5>identifier: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The selected identifier validated before registration.</p>
-										</div>
+										<p>The selected identifier validated before registration.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="cipherdriver.html" class="tsd-signature-type">CipherDriver</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="driver_cipher.cipherdriver.html" class="tsd-signature-type" data-tsd-kind="Class">CipherDriver</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -163,17 +163,17 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="_bounds" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> _bounds</h3>
-					<div class="tsd-signature tsd-kind-icon">_bounds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>disabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>ivLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>keyLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>tagLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
+					<div class="tsd-signature tsd-kind-icon">_bounds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>disabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>ivLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>keyLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>tagLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/3cd835e/lib/driver.cipher.ts#L20">driver.cipher.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/1907750/lib/driver.cipher.ts#L20">driver.cipher.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> disabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> disabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>iv<wbr>Length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
@@ -193,17 +193,17 @@
 					<div class="tsd-signature tsd-kind-icon">_identifier<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/3cd835e/lib/driver.cipher.ts#L18">driver.cipher.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/1907750/lib/driver.cipher.ts#L18">driver.cipher.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="_superify" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> _superify</h3>
-					<div class="tsd-signature tsd-kind-icon">_superify<span class="tsd-signature-symbol">:</span> <a href="../interfaces/superify.html" class="tsd-signature-type">Superify</a></div>
+					<div class="tsd-signature tsd-kind-icon">_superify<span class="tsd-signature-symbol">:</span> <a href="../interfaces/super_super_cipher.superify.html" class="tsd-signature-type" data-tsd-kind="Interface">Superify</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/3cd835e/lib/driver.cipher.ts#L19">driver.cipher.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/1907750/lib/driver.cipher.ts#L19">driver.cipher.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -214,13 +214,13 @@
 					<a name="decrypt" class="tsd-anchor"></a>
 					<h3>decrypt</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">decrypt<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><a href="../interfaces/decryptioncontext.html" class="tsd-signature-type">DecryptionContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/decryptionresponse.html" class="tsd-signature-type">DecryptionResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decrypt<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><a href="../interfaces/types_driver_t.decryptioncontext.html" class="tsd-signature-type" data-tsd-kind="Interface">DecryptionContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types_driver_t.decryptionresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">DecryptionResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/3cd835e/lib/driver.cipher.ts#L111">driver.cipher.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/1907750/lib/driver.cipher.ts#L111">driver.cipher.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -241,13 +241,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>context: <a href="../interfaces/decryptioncontext.html" class="tsd-signature-type">DecryptionContext</a></h5>
+									<h5>context: <a href="../interfaces/types_driver_t.decryptioncontext.html" class="tsd-signature-type" data-tsd-kind="Interface">DecryptionContext</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The DecryptionContext object to be provided to the algorithm.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/decryptionresponse.html" class="tsd-signature-type">DecryptionResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types_driver_t.decryptionresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">DecryptionResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<ul>
 								<li>The Promise<DecryptionResponse> object after processing by the algorithm.</li>
 							</ul>
@@ -258,13 +258,13 @@
 					<a name="encrypt" class="tsd-anchor"></a>
 					<h3>encrypt</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">encrypt<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><a href="../interfaces/encryptioncontext.html" class="tsd-signature-type">EncryptionContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encryptionresponse.html" class="tsd-signature-type">EncryptionResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encrypt<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><a href="../interfaces/types_driver_t.encryptioncontext.html" class="tsd-signature-type" data-tsd-kind="Interface">EncryptionContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types_driver_t.encryptionresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">EncryptionResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/3cd835e/lib/driver.cipher.ts#L48">driver.cipher.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/1907750/lib/driver.cipher.ts#L48">driver.cipher.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -285,13 +285,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>context: <a href="../interfaces/encryptioncontext.html" class="tsd-signature-type">EncryptionContext</a></h5>
+									<h5>context: <a href="../interfaces/types_driver_t.encryptioncontext.html" class="tsd-signature-type" data-tsd-kind="Interface">EncryptionContext</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The EncryptionContext object to be provided to the algorithm.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encryptionresponse.html" class="tsd-signature-type">EncryptionResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types_driver_t.encryptionresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">EncryptionResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<ul>
 								<li>The Promise<EncryptionResponse> object after processing by the algorithm.</li>
 							</ul>
@@ -303,8 +303,23 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/driver_cipher.html">driver.cipher</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/driver_hashing.html">driver.hashing</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/super_super_cipher.html">super/super.cipher</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/types_driver_t.html">types/driver.t</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/utils_util.html">utils/util</a>
 					</li>
 				</ul>
 			</nav>
@@ -312,76 +327,31 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="cipherdriver.html" class="tsd-kind-icon">Cipher<wbr>Driver</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="driver_cipher.cipherdriver.html" class="tsd-kind-icon">Cipher<wbr>Driver</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="cipherdriver.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="driver_cipher.cipherdriver.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="cipherdriver.html#_bounds" class="tsd-kind-icon">_bounds</a>
+								<a href="driver_cipher.cipherdriver.html#_bounds" class="tsd-kind-icon">_bounds</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="cipherdriver.html#_identifier" class="tsd-kind-icon">_identifier</a>
+								<a href="driver_cipher.cipherdriver.html#_identifier" class="tsd-kind-icon">_identifier</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="cipherdriver.html#_superify" class="tsd-kind-icon">_superify</a>
+								<a href="driver_cipher.cipherdriver.html#_superify" class="tsd-kind-icon">_superify</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="cipherdriver.html#decrypt" class="tsd-kind-icon">decrypt</a>
+								<a href="driver_cipher.cipherdriver.html#decrypt" class="tsd-kind-icon">decrypt</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="cipherdriver.html#encrypt" class="tsd-kind-icon">encrypt</a>
+								<a href="driver_cipher.cipherdriver.html#encrypt" class="tsd-kind-icon">encrypt</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="hashingdriver.html" class="tsd-kind-icon">Hashing<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/decryptioncontext.html" class="tsd-kind-icon">Decryption<wbr>Context</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/decryptionresponse.html" class="tsd-kind-icon">Decryption<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/encryptioncontext.html" class="tsd-kind-icon">Encryption<wbr>Context</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/encryptionresponse.html" class="tsd-kind-icon">Encryption<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/hashingcontext.html" class="tsd-kind-icon">Hashing<wbr>Context</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/hashingresponse.html" class="tsd-kind-icon">Hashing<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/superify.html" class="tsd-kind-icon">Superify</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#build" class="tsd-kind-icon">build</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#keys" class="tsd-kind-icon">keys</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#count" class="tsd-kind-icon">count</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#generate" class="tsd-kind-icon">generate</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#init" class="tsd-kind-icon">init</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#superify" class="tsd-kind-icon">superify</a>
-					</li>
-					<li class=" tsd-kind-object-literal">
-						<a href="../globals.html#parentsuper" class="tsd-kind-icon">parent<wbr>Super</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -392,11 +362,15 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
