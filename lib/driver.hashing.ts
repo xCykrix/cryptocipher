@@ -1,6 +1,6 @@
 import { BinaryToTextEncoding, createHash } from 'crypto'
 
-import { HashingContext, HashingResponse } from './types/driver'
+import { HashingContext, HashingResponse } from './types/driver.t'
 
 /**
  * Preinitialized Hashing Interface.

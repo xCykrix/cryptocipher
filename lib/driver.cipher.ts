@@ -1,7 +1,7 @@
 import { createCipheriv, createDecipheriv } from 'crypto'
 
 import { Superify, superify } from './super/super.cipher'
-import { DecryptionContext, DecryptionResponse, EncryptionContext, EncryptionResponse } from './types/driver'
+import { DecryptionContext, DecryptionResponse, EncryptionContext, EncryptionResponse } from './types/driver.t'
 import { count, generate } from './utils/util'
 
 /**
