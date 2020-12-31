@@ -3,7 +3,7 @@ import { BinaryToTextEncoding, createHash } from 'crypto'
 import { HashingContext, HashingResponse } from './types/driver.t'
 
 /**
- * Preinitialized Hashing Interface.
+ * Pre-initialized Hashing Interface.
  *
  * @remarks
  *
@@ -27,7 +27,7 @@ export class HashingDriver {
   }
 
   /**
-   * Executes the respective Hashing algoritm on the provided context.
+   * Executes the respective Hashing algorithm on the provided context.
    *
    * @param context - The HashingContext object to be provided to the algorithm.
    *
@@ -40,7 +40,7 @@ export class HashingDriver {
    */
   async digest (context: HashingContext): Promise<HashingResponse> {
     if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
-      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
+      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal security policy of this package. Your content length must be 1 character or longer.`)
     }
 
     const encodings: BinaryToTextEncoding[] = ['base64', 'hex']
@@ -54,10 +54,12 @@ export class HashingDriver {
     let digest = digester.digest(context.digest)
 
     if (context.iter !== undefined && context.iter > 0) {
-      context.content = digest
-      context.iter = context.iter - 1
-      const r = await this.digest(context)
-      digest = r.content
+      for (let i = 0; i < context.iter; i++) {
+        const digester = createHash(this._identifier)
+
+        digester.update(digest)
+        digest = digester.digest(context.digest)
+      }
     }
 
     return {

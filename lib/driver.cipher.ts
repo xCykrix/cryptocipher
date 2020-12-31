@@ -5,7 +5,7 @@ import { DecryptionContext, DecryptionResponse, EncryptionContext, EncryptionRes
 import { count, generate } from './utils/util'
 
 /**
- * Preinitialized Cipher Interface.
+ * Pre-initialized Cipher Interface.
  *
  * @remarks
  *
@@ -114,7 +114,7 @@ export class CipherDriver {
     }
 
     if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
-      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
+      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal security policy of this package. Your content length must be 1 character or longer.`)
     }
 
     const convertedctx = {
@@ -131,20 +131,17 @@ export class CipherDriver {
     }
     const optional: Optional = {}
 
-    /* istanbul ignore else */
     if (this._bounds.tagLength > -1) {
       optional.authTagLength = this._bounds.tagLength
     }
 
-    // @ts-expect-error: I really dont know how to make this into the acceptable format of overloads, so we are just going to pretend it doesn't exist.
+    // @ts-expect-error: I really don't know how to make this into the acceptable format of overloads, so we are just going to pretend it doesn't exist.
     const div = createDecipheriv(convertedctx.identifier, convertedctx.key, convertedctx.vector, optional)
 
-    /* istanbul ignore else */
     if (convertedctx.tag !== undefined) {
       div.setAuthTag(Buffer.from(convertedctx.tag, 'hex'))
     }
 
-    /* istanbul ignore else */
     if (convertedctx.aad !== undefined) {
       try {
         div.setAAD(Buffer.from(convertedctx.aad, 'hex'), {
