@@ -45,6 +45,7 @@
     "/LICENSE.md"
   ],
   "scripts": {
+    "prepare": "husky install",
     "stage:eslint": "eslint .",
     "stage:build": "npx tsc --build",
     "stage:tests": "mocha './tests/**/*.js'",
@@ -52,12 +53,6 @@
     "project:upgrade": "npx npm-check-updates -u --target latest && wget https://www.toptal.com/developers/gitignore/api/node,yarn,webstorm+all,visualstudiocode,vscode -O ./.gitignore",
     "project:generate-docs": "typedoc --out ./docs/ ./lib/",
     "prepack": "npm run project:build"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run stage:eslint",
-      "pre-push": "npm run project:build"
-    }
   },
   "devDependencies": {
     "@types/chai": "^4.2.16",
