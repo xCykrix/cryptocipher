@@ -1,7 +1,7 @@
 {
   "name": "cryptocipher",
   "description": "Node.js simplified cryptography implementation, powered by TypeScript",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "license": "MIT",
   "author": "Samuel J Voeller <samuel.voeller@amethyst.live> (https://chat.amethyst.live/)",
   "contributors": [],
@@ -73,7 +73,6 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.0",
-    "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-tsdoc": "^0.2.14",
     "husky": "^6.0.0",
     "mocha": "^8.3.2",
