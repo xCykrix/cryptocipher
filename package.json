@@ -79,6 +79,5 @@
     "typedoc": "^0.20.36",
     "typescript": "^4.2.4"
   },
-  "peerDependencies": {},
   "root": true
 }
