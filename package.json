@@ -51,10 +51,10 @@
   ],
   "scripts": {
     "prepare": "husky install",
+    "prepack": "npm run build",
     "stage": "eslint .",
     "build": "(npm run stage) && (npx tsc --build) && (mocha './tests/**/*.js')",
     "docs": "typedoc --out ./docs/ ./lib/",
-    "prepack": "npm run build",
     "upgrade": "npx npm-check-updates -u --target latest --peer && wget https://www.toptal.com/developers/gitignore/api/node,yarn,webstorm+all,visualstudiocode,visualstudio -O ./.gitignore && cat ./custom.gitignore >> .gitignore"
   },
   "devDependencies": {

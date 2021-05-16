@@ -11,19 +11,18 @@
       "mocha"
     ],
     "alwaysStrict": true,
+    "isolatedModules": true,
     "strictNullChecks": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "downlevelIteration": false,
     "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true
+    "esModuleInterop": true
   },
   "include": [
-    "./index.ts",
-    "./lib/**/*.ts",
-    "./tests/**/*.test.js",
-    "./.eslintrc.js",
+    "./**/*.ts",
+    "./**/**.ts",
+    "./**/*.js",
+    "./**/**.js"
   ]
 }
