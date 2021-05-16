@@ -3,10 +3,10 @@ export interface Superify {
   disabled: string[]
   overrides: {
     [key: string]: {
+      disabled?: boolean
       ivLength: number
       keyLength: number
       tagLength: number
-      disabled?: boolean
     }
   }
 }

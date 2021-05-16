@@ -1,6 +1,6 @@
-import { BinaryToTextEncoding, createHash } from 'crypto'
-
-import { HashingContext, HashingResponse } from './types/driver.t'
+import type { BinaryToTextEncoding } from 'crypto'
+import { createHash } from 'crypto'
+import type { HashingContext, HashingResponse } from './types/driver.t'
 
 /**
  * Pre-initialized Hashing Interface.
@@ -22,7 +22,7 @@ export class HashingDriver {
    *
    * @readonly
    */
-  constructor (identifier: string) {
+  public constructor (identifier: string) {
     this._identifier = identifier
   }
 
@@ -38,13 +38,14 @@ export class HashingDriver {
    * @public
    * @readonly
    */
-  async digest (context: HashingContext): Promise<HashingResponse> {
+  public async digest (context: HashingContext | undefined): Promise<HashingResponse> {
     if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal security policy of this package. Your content length must be 1 character or longer.`)
     }
 
     const encodings: BinaryToTextEncoding[] = ['base64', 'hex']
-    if (context.digest === undefined || typeof context.digest !== 'string' || !encodings.includes(context.digest)) {
+    context.digest = context.digest ?? 'base64'
+    if (typeof context.digest !== 'string' || !encodings.includes(context.digest)) {
       context.digest = 'base64'
     }
 

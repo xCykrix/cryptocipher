@@ -21,10 +21,10 @@ import { superify } from './lib/super/super.cipher'
  *
  * @param identifier - The requested driver implementation from the list of acceptable identifiers.
  *
- * @returns The preconfigured driver implementation of the specified identifier.
+ * @returns The pre-configured driver implementation of the specified identifier.
  *
- * @throws Error (sec:violation) - If the requested identifier is disabled or unsafe to use.
- * @throws Error (sec:violation) - If the requested identifier is missing or unavailable.
+ * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or unsafe to use.
+ * @throws Error (sec:violation:id_missing) - If the requested identifier is missing or unavailable.
  *
  * @readonly
  * @public
@@ -33,10 +33,10 @@ import { superify } from './lib/super/super.cipher'
 export function fetch (identifier: string): CipherDriver | HashingDriver {
   try {
     return getCipher(identifier)
-  } catch (err) {
+  } catch {
     try {
       return getHasher(identifier)
-    } catch (_err) {
+    } catch {
       throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
     }
   }
@@ -51,7 +51,7 @@ export function fetch (identifier: string): CipherDriver | HashingDriver {
  *
  * @param identifier - The requested CipherDriver implementation.
  *
- * @returns The preconfigured driver implementation from the requested identifier.
+ * @returns The pre-configured driver implementation from the requested identifier.
  *
  * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or considered unstable.
  * @throws Error (sec:violation:id_missing)  - If the requested identifier is missing or unavailable. Please report this error to https://github.com/amethyst-studio/cryptocipher/
@@ -84,7 +84,7 @@ export function getCipher (identifier: string): CipherDriver {
  *
  * @param identifier - The requested HashingDriver implementation.
  *
- * @returns The preconfigured driver implementation from the requested identifier.
+ * @returns The pre-configured driver implementation from the requested identifier.
  *
  * @throws Error (sec:violation:id_missing) - If the requested identifier is missing or unavailable.
  *

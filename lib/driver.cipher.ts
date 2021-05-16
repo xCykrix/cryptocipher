@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 import { createCipheriv, createDecipheriv } from 'crypto'
-
-import { Superify, superify } from './super/super.cipher'
-import { DecryptionContext, DecryptionResponse, EncryptionContext, EncryptionResponse } from './types/driver.t'
+import type { Superify } from './super/super.cipher'
+import { superify } from './super/super.cipher'
+import type { DecryptionContext, DecryptionResponse, EncryptionContext, EncryptionResponse } from './types/driver.t'
 import { count, generate } from './utils/util'
 
 /**
@@ -15,9 +16,9 @@ import { count, generate } from './utils/util'
  * @sealed
  */
 export class CipherDriver {
+  private readonly _bounds
   private readonly _identifier: string
   private readonly _superify: Superify
-  private readonly _bounds
 
   /**
    * Initializes the Interface with the selected identifier.
@@ -26,7 +27,7 @@ export class CipherDriver {
    *
    * @readonly
    */
-  constructor (identifier: string) {
+  public constructor (identifier: string) {
     this._identifier = identifier
     this._superify = superify()
     this._bounds = this._superify.overrides[this._identifier]
@@ -45,16 +46,16 @@ export class CipherDriver {
    * @public
    * @readonly
    */
-  async encrypt (context: EncryptionContext): Promise<EncryptionResponse> {
+  public async encrypt (context: EncryptionContext | undefined): Promise<EncryptionResponse> {
     if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
     }
 
-    if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
+    if (context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
     }
 
-    const convertedctx = {
+    const convertedCtx = {
       identifier: this._identifier,
       key: context.key,
       content: context.content,
@@ -73,24 +74,24 @@ export class CipherDriver {
     }
 
     // @ts-expect-error: I really dont know how to make this into the acceptable format of overloads, so we are just going to pretend it doesn't exist.
-    const civ = createCipheriv(convertedctx.identifier, convertedctx.key, convertedctx.vector, optional)
+    const civ = createCipheriv(convertedCtx.identifier, convertedCtx.key, convertedCtx.vector, optional)
 
     try {
-      civ.setAAD(Buffer.from(convertedctx.aad, 'hex'), {
-        plaintextLength: count(convertedctx.content)
+      civ.setAAD(Buffer.from(convertedCtx.aad, 'hex'), {
+        plaintextLength: count(convertedCtx.content)
       })
-    } catch (ignored) { /* ignored */ }
+    } catch { /* ignored */ }
 
-    const encrypted = Buffer.concat([civ.update(convertedctx.content), civ.final()])
+    const encrypted = Buffer.concat([civ.update(convertedCtx.content), civ.final()])
 
     const r: EncryptionResponse = {
-      content: convertedctx.vector + '/' + encrypted.toString('hex'),
-      aad: convertedctx.aad
+      content: convertedCtx.vector + '/' + encrypted.toString('hex'),
+      aad: convertedCtx.aad
     }
 
     try {
       r.tag = civ.getAuthTag().toString('hex')
-    } catch (ignored) { /* ignored */ }
+    } catch { /* ignored */ }
 
     return r
   }
@@ -108,16 +109,16 @@ export class CipherDriver {
    * @public
    * @readonly
    */
-  async decrypt (context: DecryptionContext): Promise<DecryptionResponse> {
+  public async decrypt (context: DecryptionContext | undefined): Promise<DecryptionResponse> {
     if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
     }
 
-    if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
+    if (context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal security policy of this package. Your content length must be 1 character or longer.`)
     }
 
-    const convertedctx = {
+    const convertedCtx = {
       identifier: this._identifier,
       key: context.key,
       aad: context.aad,
@@ -126,31 +127,30 @@ export class CipherDriver {
       content: Buffer.from(context.content.split('/')[1], 'hex')
     }
 
-    interface Optional {
+    const optional: {
       authTagLength?: number
-    }
-    const optional: Optional = {}
+    } = {}
 
     if (this._bounds.tagLength > -1) {
       optional.authTagLength = this._bounds.tagLength
     }
 
     // @ts-expect-error: I really don't know how to make this into the acceptable format of overloads, so we are just going to pretend it doesn't exist.
-    const div = createDecipheriv(convertedctx.identifier, convertedctx.key, convertedctx.vector, optional)
+    const div = createDecipheriv(convertedCtx.identifier, convertedCtx.key, convertedCtx.vector, optional)
 
-    if (convertedctx.tag !== undefined) {
-      div.setAuthTag(Buffer.from(convertedctx.tag, 'hex'))
+    if (convertedCtx.tag !== undefined) {
+      div.setAuthTag(Buffer.from(convertedCtx.tag, 'hex'))
     }
 
-    if (convertedctx.aad !== undefined) {
+    if (convertedCtx.aad !== undefined) {
       try {
-        div.setAAD(Buffer.from(convertedctx.aad, 'hex'), {
-          plaintextLength: convertedctx.content.length
+        div.setAAD(Buffer.from(convertedCtx.aad, 'hex'), {
+          plaintextLength: convertedCtx.content.length
         })
-      } catch (ignored) { /* ignored */ }
+      } catch { /* ignored */ }
     }
 
-    const decrypted = Buffer.concat([div.update(convertedctx.content), div.final()])
+    const decrypted = Buffer.concat([div.update(convertedCtx.content), div.final()])
 
     return {
       content: decrypted.toString()

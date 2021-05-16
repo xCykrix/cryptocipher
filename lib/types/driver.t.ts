@@ -1,4 +1,4 @@
-import { BinaryToTextEncoding } from 'crypto'
+import type { BinaryToTextEncoding } from 'crypto'
 
 /**
  * EncryptionContext Interface Definition
@@ -11,8 +11,8 @@ import { BinaryToTextEncoding } from 'crypto'
  * @param content - The content to be encrypted with the respective algorithm. This must be converted to a string for sanity sake.
  */
 export interface EncryptionContext {
-  key: string
-  content: string
+  content: string | undefined
+  key: string | undefined
 }
 
 /**
@@ -28,9 +28,9 @@ export interface EncryptionContext {
  * @param tag - (OPTIONAL) The Authentication Tag to be passed for decryption. This is only provided by the EncryptionResponse if it is used and is handled automagically.
  */
 export interface DecryptionContext {
-  key: string
-  content: string
   aad?: string
+  content: string | undefined
+  key: string | undefined
   tag?: string
 }
 
@@ -50,8 +50,8 @@ export interface DecryptionContext {
  * @param iter - (OPTIONAL) The number of self iterations
  */
 export interface HashingContext {
-  content: string
-  digest: BinaryToTextEncoding
+  content: string | undefined
+  digest: BinaryToTextEncoding | undefined | null
   iter?: number
 }
 
@@ -63,8 +63,8 @@ export interface HashingContext {
  * @param tag - (NULLABLE) The Authentication Tag to be stored with the content. This is required for decryption, if present.
  */
 export interface EncryptionResponse {
-  content: string
   aad?: string
+  content: string
   tag?: string
 }
 

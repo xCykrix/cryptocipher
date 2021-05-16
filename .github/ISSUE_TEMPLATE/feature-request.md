@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest new features to cryptocipher
+about: Suggest new features to the project.
 title: '[FEATURE] Generalized Overview of the Feature Request'
 labels: 'Type: Enhancement, State: Conversation, Status: Unassigned'
 assignees: ''
