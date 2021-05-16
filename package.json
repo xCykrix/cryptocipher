@@ -47,7 +47,8 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "build": "(eslint .) && (npx tsc --build) && (mocha './tests/**/*.js')",
+    "runEslint": "eslint .",
+    "build": "npm run runEslint && (npx tsc --build) && (mocha './tests/**/*.js')",
     "generateDocs": "typedoc --out ./docs/ ./lib/",
     "prepack": "npm run build",
     "upgrade": "npx npm-check-updates -u --target latest --peer && wget https://www.toptal.com/developers/gitignore/api/node,yarn,webstorm+all,visualstudiocode,visualstudio -O ./.gitignore && cat ./custom.gitignore >> .gitignore"
