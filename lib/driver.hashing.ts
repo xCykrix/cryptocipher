@@ -38,6 +38,7 @@ export class HashingDriver {
    * @public
    * @readonly
    */
+  // eslint-disable-next-line @typescript-eslint/require-await
   public async digest (context: HashingContext | undefined): Promise<HashingResponse> {
     if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal security policy of this package. Your content length must be 1 character or longer.`)

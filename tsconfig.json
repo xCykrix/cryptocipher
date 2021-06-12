@@ -3,26 +3,26 @@
     "target": "ES2016",
     "module": "CommonJS",
     "moduleResolution": "node",
-    "declaration": true,
-    "outDir": "./dist/",
+    "resolveJsonModule": true,
     "types": [
       "node",
-      "chai",
-      "mocha"
+      "mocha",
+      "chai"
     ],
     "alwaysStrict": true,
-    "isolatedModules": true,
-    "strictNullChecks": true,
+    "declaration": true,
+    "downlevelIteration": false,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strictNullChecks": true
   },
   "include": [
+    "./*.ts",
     "./**/*.ts",
-    "./**/**.ts",
-    "./**/*.js",
-    "./**/**.js"
+    "./.eslintrc.js",
   ]
 }
