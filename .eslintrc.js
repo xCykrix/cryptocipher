@@ -17,8 +17,11 @@ module.exports = {
     'standard-with-typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:node/recommended',
+    'plugin:promise/recommended'
   ],
   ignorePatterns: [
+    '/node_modules',
     '/dist/',
     '/docs/',
     '/**/*.js',
@@ -72,7 +75,9 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-use-before-define': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
-    "no-return-await": "off",
-    '@typescript-eslint/return-await': ['error', 'always']
+    'no-return-await': 'off',
+    '@typescript-eslint/return-await': ['error', 'always'],
+    'node/no-unsupported-features/es-syntax': 'off',
+    'node/no-missing-import': 'off'
   }
 }

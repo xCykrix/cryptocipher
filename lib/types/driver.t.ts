@@ -28,9 +28,9 @@ export interface EncryptionContext {
  * @param tag - (OPTIONAL) The Authentication Tag to be passed for decryption. This is only provided by the EncryptionResponse if it is used and is handled automagically.
  */
 export interface DecryptionContext {
-  aad?: string
-  content: string | undefined
   key: string | undefined
+  content: string | undefined
+  aad?: string
   tag?: string
 }
 
@@ -41,15 +41,23 @@ export interface DecryptionContext {
  *
  * Hashing is ONE WAY. If you hash something, you are never getting it back in rational means.
  *
- * Use this for passwords or confirmation data such as answers for security questions.
- * If using for passwords... please... use the iter option to hash the content multiple times internally for the security sake of your users. Use a strong hashing method such as 'sha512-256' or similar.
- * If using this for confirmation data, perhaps try to generalize the data before the initial hashing to help prevent capitalization or punctuation errors when answering or warn users of the absolute accuracy of their answers.
+ * Use this for passwords or secure information. User's security questions would be an example.
+ *
+ * If using for passwords... use the iter option to recursively hash the content multiple times. Use a strong hashing method such as 'sha512-256' or similar.
+ * If using this for secure information... try to generalize the information before the initial hashing. You can apply simplifications and internal methods to both secure but also make users less likely to struggle with exact capitalization and punctuation of their secure information.
  *
  * @param content - The content to be hashed with the respective algorithm. This must be converted to a string for sanity sake.
  * @param digest - The BinaryToTextEncoding type you wish to use as the digestion encoding. 'hex', 'base64', or 'latin1' are the accepted inputs.
- * @param iter - (OPTIONAL) The number of self iterations
+ * @param iter - [optional] The number of self iterations
  */
 export interface HashingContext {
+  content: string | undefined
+  digest: BinaryToTextEncoding | undefined | null
+  iter?: number
+}
+
+export interface HmacContext {
+  key: string | undefined
   content: string | undefined
   digest: BinaryToTextEncoding | undefined | null
   iter?: number
@@ -59,12 +67,12 @@ export interface HashingContext {
  * EncryptionResponse Interface Definition
  *
  * @param content - The encrypted content to be stored in your preferred database or file system.
- * @param aad - (NULLABLE) The Additional Authentication Data to be stored with the content. This is required for decryption, if present.
- * @param tag - (NULLABLE) The Authentication Tag to be stored with the content. This is required for decryption, if present.
+ * @param aad - [optional] The Additional Authentication Data to be stored with the content. This is required for decryption, if present.
+ * @param tag - [optional] The Authentication Tag to be stored with the content. This is required for decryption, if present.
  */
 export interface EncryptionResponse {
-  aad?: string
   content: string
+  aad?: string
   tag?: string
 }
 

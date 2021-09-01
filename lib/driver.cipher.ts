@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable @typescript-eslint/member-ordering */
 import { createCipheriv, createDecipheriv } from 'crypto'
 import type { Superify } from './super/super.cipher'
@@ -49,11 +50,11 @@ export class CipherDriver {
   // eslint-disable-next-line @typescript-eslint/require-await
   public async encrypt (context: EncryptionContext | undefined): Promise<EncryptionResponse> {
     if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
-      throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)
+      throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key must be a string and the length must be ${this._bounds.keyLength} characters or longer.`)
     }
 
     if (context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
-      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content length must be 1 character or longer.`)
+      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content must be a string and the length must be 1 character or longer.`)
     }
 
     const convertedCtx = {

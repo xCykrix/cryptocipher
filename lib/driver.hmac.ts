@@ -1,9 +1,9 @@
 import type { BinaryToTextEncoding } from 'crypto'
-import { createHash } from 'crypto'
-import type { HashingContext, HashingResponse } from './types/driver.t'
+import { createHmac } from 'crypto'
+import type { HashingResponse, HmacContext } from './types/driver.t'
 
 /**
- * Pre-initialized Hashing Interface.
+ * Pre-initialized Hmac Interface.
  *
  * @remarks
  *
@@ -12,7 +12,7 @@ import type { HashingContext, HashingResponse } from './types/driver.t'
  * @readonly
  * @sealed
  */
-export class HashingDriver {
+export class HmacDriver {
   private readonly _identifier: string
 
   /**
@@ -39,8 +39,12 @@ export class HashingDriver {
    * @readonly
    */
   // eslint-disable-next-line @typescript-eslint/require-await
-  public async digest (context: HashingContext | undefined): Promise<HashingResponse> {
-    if (context === undefined || context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
+  public async digest (context: HmacContext | undefined): Promise<HashingResponse> {
+    if (context === undefined || context.key === undefined) {
+      throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key must be a string and the length must be 1 character or longer.`)
+    }
+
+    if (context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
       throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal security policy of this package. Your content must be a string and the length must be 1 character or longer.`)
     }
 
@@ -50,14 +54,14 @@ export class HashingDriver {
       context.digest = 'base64'
     }
 
-    const digester = createHash(this._identifier)
+    const digester = createHmac(this._identifier, context.key)
 
     digester.update(context.content)
     let digest = digester.digest(context.digest)
 
     if (context.iter !== undefined && context.iter > 0) {
       for (let i = 0; i < context.iter; i++) {
-        const digester = createHash(this._identifier)
+        const digester = createHmac(this._identifier, context.key)
 
         digester.update(digest)
         digest = digester.digest(context.digest)

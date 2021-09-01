@@ -1,8 +1,9 @@
 import { getCiphers, getHashes } from 'crypto'
-
 import { CipherDriver } from './lib/driver.cipher'
 import { HashingDriver } from './lib/driver.hashing'
-import { superify } from './lib/super/super.cipher'
+import { HmacDriver } from './lib/driver.hmac'
+import { superify as cipher_superify } from './lib/super/super.cipher'
+import { superify as hmac_superify } from './lib/super/super.hmac'
 
 /**
  * Obtain an instance of the requested Driver.
@@ -12,10 +13,6 @@ import { superify } from './lib/super/super.cipher'
  * Acceptable identifiers are as follows:
  * - Any entry from crypto#getCiphers()
  * - Any entry from crypto#getHashes()
- * - diffie-hellman
- * - diffie-hellman-group
- * - ecdh
- * - hmac
  *
  * If using in TypeScript, make sure to cast the respective driver appropriately to maintain correct typings.
  *
@@ -60,7 +57,7 @@ export function fetch (identifier: string): CipherDriver | HashingDriver {
  * @public
  */
 export function getCipher (identifier: string): CipherDriver {
-  const disabled = superify().disabled
+  const disabled = cipher_superify().disabled
 
   // Check for Disabled
   if (disabled.includes(identifier)) {
@@ -95,6 +92,38 @@ export function getHasher (identifier: string): HashingDriver {
   // Check for Hasher
   if (getHashes().includes(identifier)) {
     return new HashingDriver(identifier)
+  }
+
+  throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
+}
+
+/**
+ * Obtain an instance of the requested HmacDriver.
+ *
+ * @remarks
+ *
+ * Accepts any supported Node.js Hashing Algorithm. You can find a list of supported algorithms with the https://nodejs.org/api/crypto.html#crypto_crypto_gethashes function.
+ *
+ * @param identifier - The requested HmacDriver implementation.
+ *
+ * @returns - The pre-configured driver implementation from the requested identifier.
+ *
+ * @throws Error (sec:violation:id_missing) - If the requested identifier is missing or unavailable.
+ *
+ * @readonly
+ * @public
+ */
+export function getHmac (identifier: string): HmacDriver {
+  const disabled = hmac_superify().disabled
+
+  // Check for Disabled
+  if (disabled.includes(identifier)) {
+    throw new Error('sec:violation:id_disabled: This identifier has been disabled due to security or instability concerns.')
+  }
+
+  // Check for Hasher
+  if (getHashes().includes(identifier)) {
+    return new HmacDriver(identifier)
   }
 
   throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
