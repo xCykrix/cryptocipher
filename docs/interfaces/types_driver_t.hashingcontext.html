@@ -76,9 +76,9 @@
 					<dl class="tsd-comment-tags">
 						<dt>remarks</dt>
 						<dd><p>Hashing is ONE WAY. If you hash something, you are never getting it back in rational means.</p>
-							<p>Use this for passwords or confirmation data such as answers for security questions.
-								If using for passwords... please... use the iter option to hash the content multiple times internally for the security sake of your users. Use a strong hashing method such as &#39;sha512-256&#39; or similar.
-							If using this for confirmation data, perhaps try to generalize the data before the initial hashing to help prevent capitalization or punctuation errors when answering or warn users of the absolute accuracy of their answers.</p>
+							<p>Use this for passwords or secure information. User&#39;s security questions would be an example.</p>
+							<p>If using for passwords... use the iter option to recursively hash the content multiple times. Use a strong hashing method such as &#39;sha512-256&#39; or similar.
+							If using this for secure information... try to generalize the information before the initial hashing. You can apply simplifications and internal methods to both secure but also make users less likely to struggle with exact capitalization and punctuation of their secure information.</p>
 						</dd>
 						<dt>param</dt>
 						<dd><p>The content to be hashed with the respective algorithm. This must be converted to a string for sanity sake.</p>
@@ -87,7 +87,7 @@
 						<dd><p>The BinaryToTextEncoding type you wish to use as the digestion encoding. &#39;hex&#39;, &#39;base64&#39;, or &#39;latin1&#39; are the accepted inputs.</p>
 						</dd>
 						<dt>param</dt>
-						<dd><p>(OPTIONAL) The number of self iterations</p>
+						<dd><p>[optional] The number of self iterations</p>
 						</dd>
 					</dl>
 				</div>
@@ -123,7 +123,7 @@
 					<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/61b60ba/lib/types/driver.t.ts#L53">types/driver.t.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/042abe6/lib/types/driver.t.ts#L54">types/driver.t.ts:54</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -133,7 +133,7 @@
 					<div class="tsd-signature tsd-kind-icon">digest<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BinaryToTextEncoding</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/61b60ba/lib/types/driver.t.ts#L54">types/driver.t.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/042abe6/lib/types/driver.t.ts#L55">types/driver.t.ts:55</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -143,7 +143,7 @@
 					<div class="tsd-signature tsd-kind-icon">iter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/61b60ba/lib/types/driver.t.ts#L55">types/driver.t.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/amethyst-studio/cryptocipher/blob/042abe6/lib/types/driver.t.ts#L56">types/driver.t.ts:56</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -162,7 +162,13 @@
 						<a href="../modules/driver_hashing.html">driver.hashing</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/driver_hmac.html">driver.hmac</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/super_super_cipher.html">super/super.cipher</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/super_super_hmac.html">super/super.hmac</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/types_driver_t.html">types/driver.t</a>
@@ -206,6 +212,9 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="types_driver_t.hashingresponse.html" class="tsd-kind-icon">Hashing<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="types_driver_t.hmaccontext.html" class="tsd-kind-icon">Hmac<wbr>Context</a>
 					</li>
 				</ul>
 			</nav>
