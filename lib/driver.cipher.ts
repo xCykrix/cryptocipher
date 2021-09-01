@@ -54,7 +54,7 @@ export class CipherDriver {
     }
 
     if (context.content === undefined || typeof context.content !== 'string' || context.content.length < 1) {
-      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal securit policy of this package. Your content must be a string and the length must be 1 character or longer.`)
+      throw new Error(`sec:violation:OOB_contentLength: ${this._identifier} has violated the internal security policy of this package. Your content must be a string and the length must be 1 character or longer.`)
     }
 
     const convertedCtx = {
