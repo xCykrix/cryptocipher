@@ -1,33 +1,62 @@
+
+![Amethyst Studio Logo.png](./.github/.asset/logo.png)
+
+
 # cryptocipher
 
-cryptocipher Node.js simplified cryptography implementation, powered by TypeScript
+Simplified Node.js Encryption and Hashing Utility. Enforces strong standards by default to allow users to focus on the application instead of how security will be implemented.
+
 
 ## Installation
 
-Using your preferred Node.js Package Manager. In the following commands, we will be using npm:
-
 ```bash
-npm install cryptocipher
+$ git clone https://github.com/amethyst-studio/cryptocipher.git # Application
+$ npm install cryptocipher # Library
 ```
 
-## Examples
+## Usage/Examples
 
-You can visit our [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki) for information in setting up and using this service.
+```javascript
+const cryptocipher = require('cryptocipher')
+```
 
-If you are ever having any trouble, I would greatly recommend visiting the Wiki or opening a discussion to ask us questions directly. Issues will be converted to discussions if they do not follow the pre-determined issue templates.
 
-## API Documentation
+## Run Locally
 
-You can find our API Auto-Generated Documentation available at our [GitHub Pages](https://amethyst-studio.github.io/cryptocipher/index.html).
+Clone the project
 
-## Contributing
+```bash
+$ git clone https://github.com/amethyst-studio/cryptocipher.git
+$ cd cryptocipher
+$ npm install
+$ npm run build # default build:dev alternative build:production
+$ npm run start # default start:dev alternative start:production
+```
 
-Pull requests are always welcome for all of our projects.
-If you intend to provide any underlying changes to the API, please open a discussion first so we can collaborate on the changes you intend to integrate to ensure data consistency. Pull Requests may be delayed or rejected if you do not reach out first and create significant changes.
 
-## Code of Conduct
+## Running Tests
 
-You can find more information on the Code of Conduct by visiting [Contributor Covenant's](https://www.contributor-covenant.org/) Official Website.
+To run tests, run the following command
+
+```bash
+  npm run test # default test:dev alternative test:production
+```
+
+
+## Support
+
+Reach out to us at https://invite-to.amethyst.live
+
+General: [mailto://support@mxsrv.amethyst.live](mailto://support@mxsrv.amethyst.live)
+
+Security: [mailto://support@mxsrv.amethyst.live](mailto://support@mxsrv.amethyst.live)
+
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+### Authors
+
+- [@xCykrix](https://www.github.com/xCykrix)
