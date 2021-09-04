@@ -1,5 +1,5 @@
 
-![Amethyst Studio Logo.png](./.github/.asset/logo.png)
+![Amethyst Studio Logo.png](https://raw.githubusercontent.com/amethyst-studio/cryptocipher/main/.github/.asset/logo.png)
 
 
 # cryptocipher
@@ -19,6 +19,10 @@ $ npm install cryptocipher # Library
 ```javascript
 const cryptocipher = require('cryptocipher')
 ```
+
+You can visit our [Internal Wiki](https://github.com/amethyst-studio/cryptocipher/wiki) for additional information and examples of using our software.
+
+Automatically Generated API Documentation: [Documentation for API](https://amethyst-studio.github.io/cryptocipher/index.html)
 
 
 ## Run Locally
