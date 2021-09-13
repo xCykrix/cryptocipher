@@ -1,6 +1,6 @@
 {
   "name": "cryptocipher",
-  "description": "Simplified Node.js Encryption and Hashing Utility. Enforces strong standards by default to allow users to focus on the application instead of how security will be implemented.",
+  "description": "Simplified Node.js Encryption and Hashing Library. Security by design, enforcing strong standards and not allowing encryption to be easily broken. Allow your users and developers to focus on the application instead of how security will be handled.",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Samuel Voeller <samuel.voeller@mxsrv.amethyst.live> (https://invite-to.amethyst.live)",
@@ -16,26 +16,22 @@
   "engineStrict": true,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "/dist/",
-    "/package.json",
-    "/README.md",
-    "/LICENSE.md"
-  ],
+  "files": ["/dist/", "/package.json", "/README.md", "/LICENSE.md"],
   "scripts": {
-    "husky": "husky install",
-    "format": "eslint .",
-    "build": "(npm run husky) && (npm run format) && (npx tsc --build) && (mocha './tests/**/*.js')",
+    "prepare": "husky install",
     "prepack": "npm run build",
+    "format": "eslint .",
+    "test": "mocha './tests/**/*.js'",
+    "build": "npx tsc --build && npm run test",
     "upgrade": "npx npm-check-updates -u --target latest --peer && wget https://www.toptal.com/developers/gitignore/api/node,yarn,webstorm+all,visualstudiocode,visualstudio -O ./origin.gitignore && echo '' > .gitignore && echo '# MANAGED FILE: PLEASE MAKE MODIFICATIONS TO ./user.gitignore' >> .gitignore && cat ./user.gitignore >> .gitignore && cat ./origin.gitignore >> .gitignore",
     "docs": "typedoc --out ./docs/ ./lib/"
   },
   "devDependencies": {
     "@types/chai": "^4.2.21",
     "@types/mocha": "^9.0.0",
-    "@types/node": "^16.7.10",
-    "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "@typescript-eslint/parser": "^4.30.0",
+    "@types/node": "^16.9.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
@@ -47,8 +43,8 @@
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^7.0.2",
     "mocha": "^9.1.1",
-    "typedoc": "^0.21.9",
-    "typescript": "^4.4.2"
+    "typedoc": "^0.22.3",
+    "typescript": "^4.4.3"
   },
   "root": true
 }

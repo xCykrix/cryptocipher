@@ -4,13 +4,12 @@
 
 # cryptocipher
 
-Simplified Node.js Encryption and Hashing Utility. Enforces strong standards by default to allow users to focus on the application instead of how security will be implemented.
+Simplified Node.js Encryption and Hashing Library. Security by design, enforcing strong standards and not allowing encryption to be easily broken. Allow your users and developers to focus on the application instead of how security will be handled.
 
 
 ## Installation
 
 ```bash
-$ git clone https://github.com/amethyst-studio/cryptocipher.git # Application
 $ npm install cryptocipher # Library
 ```
 
@@ -33,8 +32,7 @@ Clone the project
 $ git clone https://github.com/amethyst-studio/cryptocipher.git
 $ cd cryptocipher
 $ npm install
-$ npm run build # default build:dev alternative build:production
-$ npm run start # default start:dev alternative start:production
+$ npm run build
 ```
 
 
@@ -43,7 +41,7 @@ $ npm run start # default start:dev alternative start:production
 To run tests, run the following command
 
 ```bash
-  npm run test # default test:dev alternative test:production
+  npm run test
 ```
 
 

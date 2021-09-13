@@ -1,7 +1,7 @@
 
 repository:
   name: cryptocipher
-  description: Simplified Node.js Encryption and Hashing Utility. Enforces strong standards by default to allow users to focus on the application instead of how security will be implemented.
+  description: Simplified Node.js Encryption and Hashing Library. Security by design, enforcing strong standards and not allowing encryption to be easily broken. Allow your users and developers to focus on the application instead of how security will be handled.
   homepage: https://invite-to.amethyst.live
 
   security_and_analysis:

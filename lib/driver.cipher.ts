@@ -47,7 +47,6 @@ export class CipherDriver {
    * @public
    * @readonly
    */
-  // eslint-disable-next-line @typescript-eslint/require-await
   public async encrypt (context: EncryptionContext | undefined): Promise<EncryptionResponse> {
     if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key must be a string and the length must be ${this._bounds.keyLength} characters or longer.`)
@@ -111,7 +110,6 @@ export class CipherDriver {
    * @public
    * @readonly
    */
-  // eslint-disable-next-line @typescript-eslint/require-await
   public async decrypt (context: DecryptionContext | undefined): Promise<DecryptionResponse> {
     if (context === undefined || context.key === undefined || typeof context.key !== 'string' || count(context.key) < this._bounds.keyLength || count(context.key) > this._bounds.keyLength) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key length must be ${this._bounds.keyLength} characters or longer.`)

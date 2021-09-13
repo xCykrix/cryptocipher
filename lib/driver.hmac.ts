@@ -38,7 +38,6 @@ export class HmacDriver {
    * @public
    * @readonly
    */
-  // eslint-disable-next-line @typescript-eslint/require-await
   public async digest (context: HmacContext | undefined): Promise<HashingResponse> {
     if (context === undefined || context.key === undefined) {
       throw new Error(`sec:violation:OOB_keyLength: ${this._identifier} has violated the internal security policy of this package. Your key must be a string and the length must be 1 character or longer.`)
