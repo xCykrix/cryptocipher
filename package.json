@@ -1,6 +1,6 @@
 {
   "name": "cryptocipher",
-  "description": "Simplified Node.js Encryption and Hashing Library. Security by design, enforcing strong standards and not allowing encryption to be easily broken. Allow your users and developers to focus on the application instead of how security will be handled.",
+  "description": "Simplified Node.js Encryption and Hashing Wrapper. Featuring security & policy by design to ensure strong standards for development of your services.",
   "version": "3.0.6",
   "license": "MIT",
   "author": "Samuel Voeller <samuel.voeller@mxsrv.amethyst.live> (https://invite-to.amethyst.live)",
@@ -24,14 +24,14 @@
     "test": "mocha './tests/**/*.js'",
     "build": "npx tsc --build && npm run test",
     "upgrade": "npx npm-check-updates -u --target latest --peer && wget https://www.toptal.com/developers/gitignore/api/node,yarn,webstorm+all,visualstudiocode,visualstudio -O ./origin.gitignore && echo '' > .gitignore && echo '# MANAGED FILE: PLEASE MAKE MODIFICATIONS TO ./user.gitignore' >> .gitignore && cat ./user.gitignore >> .gitignore && cat ./origin.gitignore >> .gitignore",
-    "docs": "typedoc --out ./docs/ ./lib/"
+    "docs": "typedoc --out ./docs/ ./index.ts ./lib/*.ts ./lib/**/*.ts"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.21",
+    "@types/chai": "^4.2.22",
     "@types/mocha": "^9.0.0",
-    "@types/node": "^16.9.2",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
-    "@typescript-eslint/parser": "^4.31.1",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
@@ -42,8 +42,8 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^7.0.2",
-    "mocha": "^9.1.1",
-    "typedoc": "^0.22.3",
+    "mocha": "^9.1.2",
+    "typedoc": "^0.22.4",
     "typescript": "^4.4.3"
   },
   "root": true

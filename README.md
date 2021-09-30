@@ -15,10 +15,6 @@ $ npm install cryptocipher # Library
 
 ## Usage/Examples
 
-```javascript
-const cryptocipher = require('cryptocipher')
-```
-
 You can visit our [Internal Wiki](https://github.com/amethyst-studio/cryptocipher/wiki) for additional information and examples of using our software.
 
 Automatically Generated API Documentation: [Documentation for API](https://amethyst-studio.github.io/cryptocipher/index.html)
@@ -49,9 +45,9 @@ To run tests, run the following command
 
 Reach out to us at https://invite-to.amethyst.live
 
-General: [mailto://support@mxsrv.amethyst.live](mailto://support@mxsrv.amethyst.live)
+General: [mailto:support@mxsrv.amethyst.live](mailto:support@mxsrv.amethyst.live)
 
-Security: [mailto://support@mxsrv.amethyst.live](mailto://support@mxsrv.amethyst.live)
+Security: [mailto:samuel.voeller@mxsrv.amethyst.live](mailto:samuel.voeller@mxsrv.amethyst.live)
 
 
 ## License
