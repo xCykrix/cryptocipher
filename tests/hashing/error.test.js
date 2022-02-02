@@ -2,11 +2,11 @@ const { expect } = require('chai')
 const { getHasher } = require('../../dist/index')
 
 describe('hasher: generate consistent integrity when provided with unacceptable states', function () {
-  it('should report "id_missing" when an unknown identifier is requested', function () {
+  it('should report "id_unknown" when an unknown identifier is requested', function () {
     try {
       getHasher('invalidIdentifier')
     } catch (err) {
-      expect(err.message).to.include('id_missing')
+      expect(err.message).to.include('id_unknown')
     }
   })
   it('should report "OOB_contentLength" when content is empty', async function () {

@@ -4,11 +4,11 @@ const { getCipher } = require('../../dist/index')
 const { superify } = require('../../dist/lib/super/super.cipher')
 
 describe('cipher: generate consistent integrity when provided with unacceptable states', function () {
-  it('should report "id_missing" when an unknown identifier is requested', function () {
+  it('should report "id_unknown" when an unknown identifier is requested', function () {
     try {
       getCipher('invalidIdentifier')
     } catch (err) {
-      expect(err.message).to.include('id_missing')
+      expect(err.message).to.include('id_unknown')
     }
   })
   it('should report "id_disabled" when a disabled identifier is requested', function () {
