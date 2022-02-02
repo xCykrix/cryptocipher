@@ -1,16 +1,13 @@
+# cryptocipher
 
 ![Amethyst Studio Logo.png](https://raw.githubusercontent.com/amethyst-studio/cryptocipher/main/.github/.asset/logo.png)
 
-
-# cryptocipher
-
 Simplified Node.js Encryption and Hashing Library. Security by design, enforcing strong standards and not allowing encryption to be easily broken. Allow your users and developers to focus on the application instead of how security will be handled.
-
 
 ## Installation
 
 ```bash
-$ npm install cryptocipher # Library
+> npm install cryptocipher
 ```
 
 ## Usage/Examples
@@ -19,41 +16,36 @@ You can visit our [Internal Wiki](https://github.com/amethyst-studio/cryptociphe
 
 Automatically Generated API Documentation: [Documentation for API](https://amethyst-studio.github.io/cryptocipher/index.html)
 
-
 ## Run Locally
 
 Clone the project
 
 ```bash
-$ git clone https://github.com/amethyst-studio/cryptocipher.git
-$ cd cryptocipher
-$ npm install
-$ npm run build
+> git clone https://github.com/amethyst-studio/cryptocipher.git
+> cd cryptocipher
+> npm install
+> npm start build/library
 ```
-
 
 ## Running Tests
 
 To run tests, run the following command
 
 ```bash
-  npm run test
+> npm start test
 ```
-
 
 ## Support
 
-Reach out to us at https://invite-to.amethyst.live
+Reach out to us at [https://invite-to.amethyst.live](https://invite-to.amethyst.live)
 
 General: [mailto:support@mxsrv.amethyst.live](mailto:support@mxsrv.amethyst.live)
 
 Security: [mailto:samuel.voeller@mxsrv.amethyst.live](mailto:samuel.voeller@mxsrv.amethyst.live)
 
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
 
 ### Authors
 

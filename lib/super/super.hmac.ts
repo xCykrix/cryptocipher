@@ -8,10 +8,10 @@ const parentSuper: Superify = {
 
   disabled: [
     'shake128',
-    'shake256'
-  ]
-}
+    'shake256',
+  ],
+};
 
-export function superify (): Superify {
-  return parentSuper
+export function superify(): Superify {
+  return parentSuper;
 }

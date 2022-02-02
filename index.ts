@@ -1,75 +1,43 @@
-import { getCiphers, getHashes } from 'crypto'
-import { CipherDriver } from './lib/driver.cipher'
-import { HashingDriver } from './lib/driver.hashing'
-import { HmacDriver } from './lib/driver.hmac'
-import { superify as cipher_superify } from './lib/super/super.cipher'
-import { superify as hmac_superify } from './lib/super/super.hmac'
-
-/**
- * Obtain an instance of the requested Driver.
- *
- * @remarks
- *
- * Acceptable identifiers are as follows:
- * - Any entry from crypto#getCiphers()
- * - Any entry from crypto#getHashes()
- *
- * If using in TypeScript, make sure to cast the respective driver appropriately to maintain correct typings.
- *
- * @param identifier - The requested driver implementation from the list of acceptable identifiers.
- *
- * @returns The pre-configured driver implementation of the specified identifier.
- *
- * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or unsafe to use.
- * @throws Error (sec:violation:id_missing) - If the requested identifier is missing or unavailable.
- *
- * @readonly
- * @public
- * @deprecated This function is now deprecated and will be removed in 3.2.0, fetch() will be replaced with getCipher() getHasher() and get[Feature]() effective immediately.
- */
-export function fetch (identifier: string): CipherDriver | HashingDriver {
-  try {
-    return getCipher(identifier)
-  } catch {
-    try {
-      return getHasher(identifier)
-    } catch {
-      throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
-    }
-  }
-}
+import { getCiphers, getHashes } from 'crypto';
+import { disabledIdentifier, unknownIdentifier } from 'lib/utils/error';
+import { CipherDriver } from './lib/driver.cipher';
+import { HashingDriver } from './lib/driver.hashing';
+import { HmacDriver } from './lib/driver.hmac';
+import { superify as cipher_superify } from './lib/super/super.cipher';
+import { superify as hmac_superify } from './lib/super/super.hmac';
 
 /**
  * Obtain an instance of the requested CipherDriver.
  *
  * @remarks
  *
- * Accepts any supported Node.js Encryption Algorithm. You can find a list of supported algorithms with the https://nodejs.org/api/crypto.html#crypto_crypto_getciphers function.
+ * Should accept any supported identifier from the crypto#getCiphers() function.
+ * Reference: https://nodejs.org/api/crypto.html#crypto_crypto_getciphers
  *
- * @param identifier - The requested CipherDriver implementation.
+ * @param identifier - The requested implementation.
  *
- * @returns The pre-configured driver implementation from the requested identifier.
+ * @returns The pre-configured implementation from the requested identifier.
  *
  * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or considered unstable.
- * @throws Error (sec:violation:id_missing)  - If the requested identifier is missing or unavailable. Please report this error to https://github.com/amethyst-studio/cryptocipher/
+ * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
  *
- * @readonly
  * @public
  */
-export function getCipher (identifier: string): CipherDriver {
-  const disabled = cipher_superify().disabled
+export function getCipher(identifier: string): CipherDriver {
+  const disabled = cipher_superify().disabled;
 
-  // Check for Disabled
+  // Validate against the list of disabled identifiers.
   if (disabled.includes(identifier)) {
-    throw new Error('sec:violation:id_disabled: This identifier has been disabled due to security or instability concerns.')
+    throw disabledIdentifier(identifier);
   }
 
-  // Check for Cipher
+  // Validate against the list of system-available identifiers.
   if (getCiphers().includes(identifier)) {
-    return new CipherDriver(identifier)
+    return new CipherDriver(identifier);
   }
 
-  throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
+  // Fallback to an error if the identifier is not available.
+  throw unknownIdentifier(identifier);
 }
 
 /**
@@ -77,24 +45,25 @@ export function getCipher (identifier: string): CipherDriver {
  *
  * @remarks
  *
- * Accepts any supported Node.js Hashing Algorithm. You can find a list of supported algorithms with the https://nodejs.org/api/crypto.html#crypto_crypto_gethashes function.
+ * Should accept any supported identifier from the crypto#getHashes() function.
+ * Reference: https://nodejs.org/api/crypto.html#crypto_crypto_gethashes
  *
- * @param identifier - The requested HashingDriver implementation.
+ * @param identifier - The requested implementation.
  *
- * @returns The pre-configured driver implementation from the requested identifier.
+ * @returns The pre-configured implementation from the requested identifier.
  *
- * @throws Error (sec:violation:id_missing) - If the requested identifier is missing or unavailable.
+ * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
  *
- * @readonly
  * @public
  */
-export function getHasher (identifier: string): HashingDriver {
-  // Check for Hasher
+export function getHasher(identifier: string): HashingDriver {
+  // Validate against the list of system-available identifiers.
   if (getHashes().includes(identifier)) {
-    return new HashingDriver(identifier)
+    return new HashingDriver(identifier);
   }
 
-  throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
+  // Fallback to an error if the identifier is not available.
+  throw unknownIdentifier(identifier);
 }
 
 /**
@@ -102,29 +71,31 @@ export function getHasher (identifier: string): HashingDriver {
  *
  * @remarks
  *
- * Accepts any supported Node.js Hashing Algorithm. You can find a list of supported algorithms with the https://nodejs.org/api/crypto.html#crypto_crypto_gethashes function.
+ * Should accept any supported identifier from the crypto#getHashes() function.
+ * Reference: https://nodejs.org/api/crypto.html#crypto_crypto_gethashes
  *
- * @param identifier - The requested HmacDriver implementation.
+ * @param identifier - The requested implementation.
  *
- * @returns - The pre-configured driver implementation from the requested identifier.
+ * @returns The pre-configured implementation from the requested identifier.
  *
- * @throws Error (sec:violation:id_missing) - If the requested identifier is missing or unavailable.
+ * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or considered unstable.
+ * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
  *
- * @readonly
  * @public
  */
-export function getHmac (identifier: string): HmacDriver {
-  const disabled = hmac_superify().disabled
+export function getHmac(identifier: string): HmacDriver {
+  const disabled = hmac_superify().disabled;
 
-  // Check for Disabled
+  // Validate against the list of disabled identifiers.
   if (disabled.includes(identifier)) {
-    throw new Error('sec:violation:id_disabled: This identifier has been disabled due to security or instability concerns.')
+    throw disabledIdentifier(identifier);
   }
 
-  // Check for Hasher
+  // Validate against the list of system-available identifiers.
   if (getHashes().includes(identifier)) {
-    return new HmacDriver(identifier)
+    return new HmacDriver(identifier);
   }
 
-  throw new Error('sec:violation:id_missing: This identifier was not able to be found. If you believe this is a bug, please open a report at https://github.com/amethyst-studio/cryptocipher for assistance.')
+  // Fallback to an error if the identifier is not available.
+  throw unknownIdentifier(identifier);
 }

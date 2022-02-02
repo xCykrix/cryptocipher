@@ -1,4 +1,4 @@
-import type { BinaryToTextEncoding } from 'crypto'
+import type { BinaryToTextEncoding } from 'crypto';
 
 /**
  * EncryptionContext Interface Definition
