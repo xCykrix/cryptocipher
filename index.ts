@@ -1,5 +1,5 @@
 import { getCiphers, getHashes } from 'crypto';
-import { disabledIdentifier, unknownIdentifier } from 'lib/utils/error';
+import { disabledIdentifier, unknownIdentifier } from './lib/utils/error';
 import { CipherDriver } from './lib/driver.cipher';
 import { HashingDriver } from './lib/driver.hashing';
 import { HmacDriver } from './lib/driver.hmac';
