@@ -30,8 +30,7 @@
   "scripts": {
     "start": "launch",
     "prepare": "husky install",
-    "postinstall:detect-dist": "node -e \"let exists = !require('fs').existsSync('dist'); if (!exists) process.exit(1); process.exit(0);\"",
-    "postinstall": "npm run postinstall:detect-dist || echo \"___PROJECT_BUILT_FROM_SOURCES___\" >> .BUILT_FROM_SOURCES && npm exec --package=typescript -c 'npm set-script prepare \"\" && npm install -P --only=production @types/chai @types/mocha @types/node && tsc --project ./tsconfig.json && npm remove -P --only=production @types/chai @types/mocha @types/node && npm prune' && npm prune"
+    "prepack": "npm start build/library"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
