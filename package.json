@@ -49,8 +49,5 @@
     "typedoc": "^0.22.11",
     "typescript": "^4.5.5"
   },
-  "root": true,
-  "dependencies": {
-    "node-emoji": "^1.11.0"
-  }
+  "root": true
 }
