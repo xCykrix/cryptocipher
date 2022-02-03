@@ -14,7 +14,7 @@
     Simplified Node.js Encryption, Hashing, and HMAC. Featuring security & policy by design to ensure strong standards for the development of your services.
     <br/>
     <br/>
-    <a href="https://github.com/amethyst-studio/cryptocipher"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/amethyst-studio/cryptocipher/wiki"><strong>Explore our Documentation »</strong></a>
     <br/>
     <br/>
     <a href="https://github.com/amethyst-studio/cryptocipher/issues">Report Bug</a>
