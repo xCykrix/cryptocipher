@@ -10,28 +10,26 @@
     "url": "git@github.com/amethyst-studio/cryptocipher.git"
   },
   "engines": {
-    "node": ">=16.7.0",
-    "npm": ">=7.22.0"
+    "node": ">=16.0.0",
+    "npm": ">=7.24.2"
   },
   "engineStrict": true,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "lib",
-    ".eslintrc.js",
-    ".gitignore",
-    ".gitmodules",
-    "index.ts",
+    "dist",
     "LICENSE",
     "package-lock.json",
     "package.json",
-    "README.md",
-    "tsconfig.json"
+    "README.md"
   ],
   "scripts": {
     "start": "launch",
     "prepare": "husky install",
-    "prepack": "npm run build"
+    "postinstall": "run-script-os",
+    "postinstall:win32": "",
+    "postinstall:darwin:linux": "",
+    "postinstall:default": "echo 'Unable to detect OS. Failed to build from relative source.'"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
@@ -47,12 +45,10 @@
     "eslint-plugin-node": "^11.1.0",
     "husky": "^7.0.4",
     "mocha": "^9.2.0",
+    "run-script-os": "^1.1.6",
     "script-launcher": "^1.37.1",
     "typedoc": "^0.22.11",
     "typescript": "^4.5.5"
-  },
-  "optionalDependencies": {
-    "ts-node": "^10.4.0"
   },
   "root": true
 }
