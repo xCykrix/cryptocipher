@@ -26,9 +26,9 @@
   "scripts": {
     "start": "launch",
     "prepare": "husky install",
+    "install-detect": "node -e \"let exists = !require('fs').existsSync('.git'); if (!exists) process.exit(1); process.exit(0);\"",
     "postinstall": "run-script-os",
-    "postinstall:win32": "",
-    "postinstall:darwin:linux": "",
+    "postinstall:win32:darwin:linux": "npm run install-detect || echo 'detected .git', potentiall installed from source?",
     "postinstall:default": "echo 'Unable to detect OS. Failed to build from relative source.'"
   },
   "devDependencies": {
