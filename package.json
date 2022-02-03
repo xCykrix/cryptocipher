@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "start": "launch",
-    "prepare": "husky install && npm start build/library"
+    "prepare": "husky install && npm exec --package=typescript -c 'tsc --project ./tsconfig.json'"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
