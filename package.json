@@ -18,16 +18,19 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
+    "lib",
+    "index.ts",
     "LICENSE",
     "package-lock.json",
     "package.json",
-    "README.md"
+    "README.md",
+    "tsconfig.json"
   ],
   "scripts": {
     "start": "launch",
     "prepare": "husky install",
-    "install-detect": "node -e \"let exists = !require('fs').existsSync('.git'); if (!exists) process.exit(1); process.exit(0);\"",
-    "postinstall": "npm run install-detect || echo 'detected .git', potentiall installed from source?"
+    "postinstall:detect-dist": "node -e \"let exists = !require('fs').existsSync('dist'); if (!exists) process.exit(1); process.exit(0);\"",
+    "postinstall": "npm run postinstall:detect-dist || echo 'Missing dist... compiling with tsc?'"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
@@ -43,7 +46,6 @@
     "eslint-plugin-node": "^11.1.0",
     "husky": "^7.0.4",
     "mocha": "^9.2.0",
-    "run-script-os": "^1.1.6",
     "script-launcher": "^1.37.1",
     "ts-node": "^10.4.0",
     "typedoc": "^0.22.11",
