@@ -30,7 +30,7 @@
     "start": "launch",
     "prepare": "husky install",
     "postinstall:detect-dist": "node -e \"let exists = !require('fs').existsSync('dist'); if (!exists) process.exit(1); process.exit(0);\"",
-    "postinstall": "pwd && npm run postinstall:detect-dist || echo 'Missing dist... compiling with tsc?'"
+    "postinstall": "pwd && npm run postinstall:detect-dist || echo 'Missing dist... compiling with tsc?' && touch .missing_dist"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
