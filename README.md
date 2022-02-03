@@ -62,7 +62,7 @@ Getting started with any of our libraries is extremely easy! Just download the l
 
 ### Prerequisites
 
-You'll obviously need the starting components of your project. This guide assumed that you already have an underlying project with Node.js installed and npm ready to use.
+You'll obviously need the starting components of your project. This guide assumes that you already have an underlying project with Node.js installed and npm ready to use.
 
 This package is officially compatible with Node.js `v16.0.0` or higher, and NPM `v7.24.2` or higher. Earlier versions of each may work, but are not officially supported and will not be delved into deeply for support should issues arise.
 
