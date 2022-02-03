@@ -1,0 +1,453 @@
+
+> cryptocipher@3.0.6 start
+> launch "test"
+
+
+
+  cipher: generate consistent integrity when provided with unacceptable states
+    ✔ should report "id_unknown" when an unknown identifier is requested
+    ✔ should report "id_disabled" when a disabled identifier is requested
+    ✔ should report "OOB_keyLength" when identifier keyLength is incorrect
+    ✔ should report "OOB_contentLength" when content is empty
+
+  cipher: generate consistent integrity with encryption and decryption events
+    ✔ executes algorithm 'aes-128-cbc'
+    - executes algorithm 'aes-128-cbc-hmac-sha1'
+    - executes algorithm 'aes-128-cbc-hmac-sha256'
+    ✔ executes algorithm 'aes-128-ccm'
+    ✔ executes algorithm 'aes-128-cfb'
+    ✔ executes algorithm 'aes-128-cfb1'
+    ✔ executes algorithm 'aes-128-cfb8'
+    ✔ executes algorithm 'aes-128-ctr'
+    ✔ executes algorithm 'aes-128-ecb'
+    ✔ executes algorithm 'aes-128-gcm'
+    ✔ executes algorithm 'aes-128-ocb'
+    ✔ executes algorithm 'aes-128-ofb'
+    ✔ executes algorithm 'aes-128-xts'
+    ✔ executes algorithm 'aes-192-cbc'
+    ✔ executes algorithm 'aes-192-ccm'
+    ✔ executes algorithm 'aes-192-cfb'
+    ✔ executes algorithm 'aes-192-cfb1'
+    ✔ executes algorithm 'aes-192-cfb8'
+    ✔ executes algorithm 'aes-192-ctr'
+    ✔ executes algorithm 'aes-192-ecb'
+    ✔ executes algorithm 'aes-192-gcm'
+    ✔ executes algorithm 'aes-192-ocb'
+    ✔ executes algorithm 'aes-192-ofb'
+    ✔ executes algorithm 'aes-256-cbc'
+    - executes algorithm 'aes-256-cbc-hmac-sha1'
+    - executes algorithm 'aes-256-cbc-hmac-sha256'
+    ✔ executes algorithm 'aes-256-ccm'
+    ✔ executes algorithm 'aes-256-cfb'
+    ✔ executes algorithm 'aes-256-cfb1'
+    ✔ executes algorithm 'aes-256-cfb8'
+    ✔ executes algorithm 'aes-256-ctr'
+    ✔ executes algorithm 'aes-256-ecb'
+    ✔ executes algorithm 'aes-256-gcm'
+    ✔ executes algorithm 'aes-256-ocb'
+    ✔ executes algorithm 'aes-256-ofb'
+    ✔ executes algorithm 'aes-256-xts'
+    ✔ executes algorithm 'aes128'
+    - executes algorithm 'aes128-wrap'
+    ✔ executes algorithm 'aes192'
+    - executes algorithm 'aes192-wrap'
+    ✔ executes algorithm 'aes256'
+    - executes algorithm 'aes256-wrap'
+    ✔ executes algorithm 'aria-128-cbc'
+    ✔ executes algorithm 'aria-128-ccm'
+    ✔ executes algorithm 'aria-128-cfb'
+    ✔ executes algorithm 'aria-128-cfb1'
+    ✔ executes algorithm 'aria-128-cfb8'
+    ✔ executes algorithm 'aria-128-ctr'
+    ✔ executes algorithm 'aria-128-ecb'
+    ✔ executes algorithm 'aria-128-gcm'
+    ✔ executes algorithm 'aria-128-ofb'
+    ✔ executes algorithm 'aria-192-cbc'
+    ✔ executes algorithm 'aria-192-ccm'
+    ✔ executes algorithm 'aria-192-cfb'
+    ✔ executes algorithm 'aria-192-cfb1'
+    ✔ executes algorithm 'aria-192-cfb8'
+    ✔ executes algorithm 'aria-192-ctr'
+    ✔ executes algorithm 'aria-192-ecb'
+    ✔ executes algorithm 'aria-192-gcm'
+    ✔ executes algorithm 'aria-192-ofb'
+    ✔ executes algorithm 'aria-256-cbc'
+    ✔ executes algorithm 'aria-256-ccm'
+    ✔ executes algorithm 'aria-256-cfb'
+    ✔ executes algorithm 'aria-256-cfb1' (39ms)
+    ✔ executes algorithm 'aria-256-cfb8'
+    ✔ executes algorithm 'aria-256-ctr'
+    ✔ executes algorithm 'aria-256-ecb'
+    ✔ executes algorithm 'aria-256-gcm'
+    ✔ executes algorithm 'aria-256-ofb'
+    ✔ executes algorithm 'aria128'
+    ✔ executes algorithm 'aria192'
+    ✔ executes algorithm 'aria256'
+    - executes algorithm 'bf'
+    - executes algorithm 'bf-cbc'
+    - executes algorithm 'bf-cfb'
+    - executes algorithm 'bf-ecb'
+    - executes algorithm 'bf-ofb'
+    - executes algorithm 'blowfish'
+    ✔ executes algorithm 'camellia-128-cbc'
+    ✔ executes algorithm 'camellia-128-cfb'
+    ✔ executes algorithm 'camellia-128-cfb1'
+    ✔ executes algorithm 'camellia-128-cfb8'
+    ✔ executes algorithm 'camellia-128-ctr'
+    ✔ executes algorithm 'camellia-128-ecb'
+    ✔ executes algorithm 'camellia-128-ofb'
+    ✔ executes algorithm 'camellia-192-cbc'
+    ✔ executes algorithm 'camellia-192-cfb'
+    ✔ executes algorithm 'camellia-192-cfb1'
+    ✔ executes algorithm 'camellia-192-cfb8'
+    ✔ executes algorithm 'camellia-192-ctr'
+    ✔ executes algorithm 'camellia-192-ecb'
+    ✔ executes algorithm 'camellia-192-ofb'
+    ✔ executes algorithm 'camellia-256-cbc'
+    ✔ executes algorithm 'camellia-256-cfb'
+    ✔ executes algorithm 'camellia-256-cfb1'
+    ✔ executes algorithm 'camellia-256-cfb8'
+    ✔ executes algorithm 'camellia-256-ctr'
+    ✔ executes algorithm 'camellia-256-ecb'
+    ✔ executes algorithm 'camellia-256-ofb'
+    ✔ executes algorithm 'camellia128'
+    ✔ executes algorithm 'camellia192'
+    ✔ executes algorithm 'camellia256'
+    - executes algorithm 'cast'
+    - executes algorithm 'cast-cbc'
+    - executes algorithm 'cast5-cbc'
+    - executes algorithm 'cast5-cfb'
+    - executes algorithm 'cast5-ecb'
+    - executes algorithm 'cast5-ofb'
+    ✔ executes algorithm 'chacha20'
+    ✔ executes algorithm 'chacha20-poly1305'
+    - executes algorithm 'des'
+    - executes algorithm 'des-cbc'
+    - executes algorithm 'des-cfb'
+    - executes algorithm 'des-cfb1'
+    - executes algorithm 'des-cfb8'
+    - executes algorithm 'des-ecb'
+    - executes algorithm 'des-ede'
+    - executes algorithm 'des-ede-cbc'
+    - executes algorithm 'des-ede-cfb'
+    - executes algorithm 'des-ede-ecb'
+    - executes algorithm 'des-ede-ofb'
+    ✔ executes algorithm 'des-ede3'
+    ✔ executes algorithm 'des-ede3-cbc'
+    ✔ executes algorithm 'des-ede3-cfb'
+    ✔ executes algorithm 'des-ede3-cfb1' (73ms)
+    ✔ executes algorithm 'des-ede3-cfb8'
+    ✔ executes algorithm 'des-ede3-ecb'
+    ✔ executes algorithm 'des-ede3-ofb'
+    - executes algorithm 'des-ofb'
+    ✔ executes algorithm 'des3'
+    - executes algorithm 'des3-wrap'
+    - executes algorithm 'desx'
+    - executes algorithm 'desx-cbc'
+    ✔ executes algorithm 'id-aes128-CCM'
+    ✔ executes algorithm 'id-aes128-GCM'
+    - executes algorithm 'id-aes128-wrap'
+    ✔ executes algorithm 'id-aes128-wrap-pad'
+    ✔ executes algorithm 'id-aes192-CCM'
+    ✔ executes algorithm 'id-aes192-GCM'
+    - executes algorithm 'id-aes192-wrap'
+    ✔ executes algorithm 'id-aes192-wrap-pad'
+    ✔ executes algorithm 'id-aes256-CCM'
+    ✔ executes algorithm 'id-aes256-GCM'
+    - executes algorithm 'id-aes256-wrap'
+    ✔ executes algorithm 'id-aes256-wrap-pad'
+    - executes algorithm 'id-smime-alg-CMS3DESwrap'
+    - executes algorithm 'idea'
+    - executes algorithm 'idea-cbc'
+    - executes algorithm 'idea-cfb'
+    - executes algorithm 'idea-ecb'
+    - executes algorithm 'idea-ofb'
+    - executes algorithm 'rc2'
+    - executes algorithm 'rc2-128'
+    - executes algorithm 'rc2-40'
+    - executes algorithm 'rc2-40-cbc'
+    - executes algorithm 'rc2-64'
+    - executes algorithm 'rc2-64-cbc'
+    - executes algorithm 'rc2-cbc'
+    - executes algorithm 'rc2-cfb'
+    - executes algorithm 'rc2-ecb'
+    - executes algorithm 'rc2-ofb'
+    - executes algorithm 'rc4'
+    - executes algorithm 'rc4-40'
+    - executes algorithm 'rc4-hmac-md5'
+    - executes algorithm 'seed'
+    - executes algorithm 'seed-cbc'
+    - executes algorithm 'seed-cfb'
+    - executes algorithm 'seed-ecb'
+    - executes algorithm 'seed-ofb'
+    ✔ executes algorithm 'sm4'
+    ✔ executes algorithm 'sm4-cbc'
+    ✔ executes algorithm 'sm4-cfb'
+    ✔ executes algorithm 'sm4-ctr'
+    ✔ executes algorithm 'sm4-ecb'
+    ✔ executes algorithm 'sm4-ofb'
+
+  hasher: generate consistent integrity when provided with unacceptable states
+    ✔ should report "id_unknown" when an unknown identifier is requested
+    ✔ should report "OOB_contentLength" when content is empty
+    ✔ should default to base64 encoding when invalid encoding is provided
+
+  hasher: generate consistent integrity with hash events
+    - executes algorithm 'RSA-MD4' [short]
+    - executes algorithm 'RSA-MD4' [long]
+    ✔ executes algorithm 'RSA-MD5' [short]
+    ✔ executes algorithm 'RSA-MD5' [long]
+    - executes algorithm 'RSA-MDC2' [short]
+    - executes algorithm 'RSA-MDC2' [long]
+    - executes algorithm 'RSA-RIPEMD160' [short]
+    - executes algorithm 'RSA-RIPEMD160' [long]
+    ✔ executes algorithm 'RSA-SHA1' [short]
+    ✔ executes algorithm 'RSA-SHA1' [long]
+    ✔ executes algorithm 'RSA-SHA1-2' [short]
+    ✔ executes algorithm 'RSA-SHA1-2' [long]
+    ✔ executes algorithm 'RSA-SHA224' [short]
+    ✔ executes algorithm 'RSA-SHA224' [long]
+    ✔ executes algorithm 'RSA-SHA256' [short]
+    ✔ executes algorithm 'RSA-SHA256' [long]
+    ✔ executes algorithm 'RSA-SHA3-224' [short]
+    ✔ executes algorithm 'RSA-SHA3-224' [long]
+    ✔ executes algorithm 'RSA-SHA3-256' [short]
+    ✔ executes algorithm 'RSA-SHA3-256' [long]
+    ✔ executes algorithm 'RSA-SHA3-384' [short]
+    ✔ executes algorithm 'RSA-SHA3-384' [long]
+    ✔ executes algorithm 'RSA-SHA3-512' [short]
+    ✔ executes algorithm 'RSA-SHA3-512' [long]
+    ✔ executes algorithm 'RSA-SHA384' [short]
+    ✔ executes algorithm 'RSA-SHA384' [long]
+    ✔ executes algorithm 'RSA-SHA512' [short]
+    ✔ executes algorithm 'RSA-SHA512' [long]
+    ✔ executes algorithm 'RSA-SHA512/224' [short]
+    ✔ executes algorithm 'RSA-SHA512/224' [long]
+    ✔ executes algorithm 'RSA-SHA512/256' [short]
+    ✔ executes algorithm 'RSA-SHA512/256' [long]
+    ✔ executes algorithm 'RSA-SM3' [short]
+    ✔ executes algorithm 'RSA-SM3' [long]
+    ✔ executes algorithm 'blake2b512' [short]
+    ✔ executes algorithm 'blake2b512' [long]
+    ✔ executes algorithm 'blake2s256' [short]
+    ✔ executes algorithm 'blake2s256' [long]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-224' [short]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-224' [long]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-256' [short]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-256' [long]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-384' [short]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-384' [long]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-512' [short]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-512' [long]
+    - executes algorithm 'md4' [short]
+    - executes algorithm 'md4' [long]
+    - executes algorithm 'md4WithRSAEncryption' [short]
+    - executes algorithm 'md4WithRSAEncryption' [long]
+    ✔ executes algorithm 'md5' [short]
+    ✔ executes algorithm 'md5' [long]
+    ✔ executes algorithm 'md5-sha1' [short]
+    ✔ executes algorithm 'md5-sha1' [long]
+    ✔ executes algorithm 'md5WithRSAEncryption' [short]
+    ✔ executes algorithm 'md5WithRSAEncryption' [long]
+    - executes algorithm 'mdc2' [short]
+    - executes algorithm 'mdc2' [long]
+    - executes algorithm 'mdc2WithRSA' [short]
+    - executes algorithm 'mdc2WithRSA' [long]
+    - executes algorithm 'ripemd' [short]
+    - executes algorithm 'ripemd' [long]
+    - executes algorithm 'ripemd160' [short]
+    - executes algorithm 'ripemd160' [long]
+    - executes algorithm 'ripemd160WithRSA' [short]
+    - executes algorithm 'ripemd160WithRSA' [long]
+    - executes algorithm 'rmd160' [short]
+    - executes algorithm 'rmd160' [long]
+    ✔ executes algorithm 'sha1' [short]
+    ✔ executes algorithm 'sha1' [long]
+    ✔ executes algorithm 'sha1WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha1WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha224' [short]
+    ✔ executes algorithm 'sha224' [long]
+    ✔ executes algorithm 'sha224WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha224WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha256' [short]
+    ✔ executes algorithm 'sha256' [long]
+    ✔ executes algorithm 'sha256WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha256WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha3-224' [short]
+    ✔ executes algorithm 'sha3-224' [long]
+    ✔ executes algorithm 'sha3-256' [short]
+    ✔ executes algorithm 'sha3-256' [long]
+    ✔ executes algorithm 'sha3-384' [short]
+    ✔ executes algorithm 'sha3-384' [long]
+    ✔ executes algorithm 'sha3-512' [short]
+    ✔ executes algorithm 'sha3-512' [long]
+    ✔ executes algorithm 'sha384' [short]
+    ✔ executes algorithm 'sha384' [long]
+    ✔ executes algorithm 'sha384WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha384WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha512' [short]
+    ✔ executes algorithm 'sha512' [long]
+    ✔ executes algorithm 'sha512-224' [short]
+    ✔ executes algorithm 'sha512-224' [long]
+    ✔ executes algorithm 'sha512-224WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha512-224WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha512-256' [short]
+    ✔ executes algorithm 'sha512-256' [long]
+    ✔ executes algorithm 'sha512-256WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha512-256WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha512WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha512WithRSAEncryption' [long]
+    - executes algorithm 'shake128' [short]
+    - executes algorithm 'shake128' [long]
+    - executes algorithm 'shake256' [short]
+    - executes algorithm 'shake256' [long]
+    ✔ executes algorithm 'sm3' [short]
+    ✔ executes algorithm 'sm3' [long]
+    ✔ executes algorithm 'sm3WithRSAEncryption' [short]
+    ✔ executes algorithm 'sm3WithRSAEncryption' [long]
+    ✔ executes algorithm 'ssl3-md5' [short]
+    ✔ executes algorithm 'ssl3-md5' [long]
+    ✔ executes algorithm 'ssl3-sha1' [short]
+    ✔ executes algorithm 'ssl3-sha1' [long]
+    - executes algorithm 'whirlpool' [short]
+    - executes algorithm 'whirlpool' [long]
+
+  hmac: generate consistent integrity when provided with unacceptable states
+    ✔ should report "id_unknown" when an unknown identifier is requested
+    ✔ should report "OOB_contentLength" when content is empty
+    ✔ should default to base64 encoding when invalid encoding is provided
+
+  hmac: generate consistent integrity with hash events
+    - executes algorithm 'RSA-MD4' [short]
+    - executes algorithm 'RSA-MD4' [long]
+    ✔ executes algorithm 'RSA-MD5' [short]
+    ✔ executes algorithm 'RSA-MD5' [long]
+    - executes algorithm 'RSA-MDC2' [short]
+    - executes algorithm 'RSA-MDC2' [long]
+    - executes algorithm 'RSA-RIPEMD160' [short]
+    - executes algorithm 'RSA-RIPEMD160' [long]
+    ✔ executes algorithm 'RSA-SHA1' [short]
+    ✔ executes algorithm 'RSA-SHA1' [long]
+    ✔ executes algorithm 'RSA-SHA1-2' [short]
+    ✔ executes algorithm 'RSA-SHA1-2' [long]
+    ✔ executes algorithm 'RSA-SHA224' [short]
+    ✔ executes algorithm 'RSA-SHA224' [long]
+    ✔ executes algorithm 'RSA-SHA256' [short]
+    ✔ executes algorithm 'RSA-SHA256' [long]
+    ✔ executes algorithm 'RSA-SHA3-224' [short]
+    ✔ executes algorithm 'RSA-SHA3-224' [long]
+    ✔ executes algorithm 'RSA-SHA3-256' [short]
+    ✔ executes algorithm 'RSA-SHA3-256' [long]
+    ✔ executes algorithm 'RSA-SHA3-384' [short]
+    ✔ executes algorithm 'RSA-SHA3-384' [long]
+    ✔ executes algorithm 'RSA-SHA3-512' [short]
+    ✔ executes algorithm 'RSA-SHA3-512' [long]
+    ✔ executes algorithm 'RSA-SHA384' [short]
+    ✔ executes algorithm 'RSA-SHA384' [long]
+    ✔ executes algorithm 'RSA-SHA512' [short]
+    ✔ executes algorithm 'RSA-SHA512' [long]
+    ✔ executes algorithm 'RSA-SHA512/224' [short]
+    ✔ executes algorithm 'RSA-SHA512/224' [long]
+    ✔ executes algorithm 'RSA-SHA512/256' [short]
+    ✔ executes algorithm 'RSA-SHA512/256' [long]
+    ✔ executes algorithm 'RSA-SM3' [short]
+    ✔ executes algorithm 'RSA-SM3' [long]
+    ✔ executes algorithm 'blake2b512' [short]
+    ✔ executes algorithm 'blake2b512' [long]
+    ✔ executes algorithm 'blake2s256' [short]
+    ✔ executes algorithm 'blake2s256' [long]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-224' [short]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-224' [long]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-256' [short]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-256' [long]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-384' [short]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-384' [long]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-512' [short]
+    ✔ executes algorithm 'id-rsassa-pkcs1-v1_5-with-sha3-512' [long]
+    - executes algorithm 'md4' [short]
+    - executes algorithm 'md4' [long]
+    - executes algorithm 'md4WithRSAEncryption' [short]
+    - executes algorithm 'md4WithRSAEncryption' [long]
+    ✔ executes algorithm 'md5' [short]
+    ✔ executes algorithm 'md5' [long]
+    ✔ executes algorithm 'md5-sha1' [short]
+    ✔ executes algorithm 'md5-sha1' [long]
+    ✔ executes algorithm 'md5WithRSAEncryption' [short]
+    ✔ executes algorithm 'md5WithRSAEncryption' [long]
+    - executes algorithm 'mdc2' [short]
+    - executes algorithm 'mdc2' [long]
+    - executes algorithm 'mdc2WithRSA' [short]
+    - executes algorithm 'mdc2WithRSA' [long]
+    - executes algorithm 'ripemd' [short]
+    - executes algorithm 'ripemd' [long]
+    - executes algorithm 'ripemd160' [short]
+    - executes algorithm 'ripemd160' [long]
+    - executes algorithm 'ripemd160WithRSA' [short]
+    - executes algorithm 'ripemd160WithRSA' [long]
+    - executes algorithm 'rmd160' [short]
+    - executes algorithm 'rmd160' [long]
+    ✔ executes algorithm 'sha1' [short]
+    ✔ executes algorithm 'sha1' [long]
+    ✔ executes algorithm 'sha1WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha1WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha224' [short]
+    ✔ executes algorithm 'sha224' [long]
+    ✔ executes algorithm 'sha224WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha224WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha256' [short]
+    ✔ executes algorithm 'sha256' [long]
+    ✔ executes algorithm 'sha256WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha256WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha3-224' [short]
+    ✔ executes algorithm 'sha3-224' [long]
+    ✔ executes algorithm 'sha3-256' [short]
+    ✔ executes algorithm 'sha3-256' [long]
+    ✔ executes algorithm 'sha3-384' [short]
+    ✔ executes algorithm 'sha3-384' [long]
+    ✔ executes algorithm 'sha3-512' [short]
+    ✔ executes algorithm 'sha3-512' [long]
+    ✔ executes algorithm 'sha384' [short]
+    ✔ executes algorithm 'sha384' [long]
+    ✔ executes algorithm 'sha384WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha384WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha512' [short]
+    ✔ executes algorithm 'sha512' [long]
+    ✔ executes algorithm 'sha512-224' [short]
+    ✔ executes algorithm 'sha512-224' [long]
+    ✔ executes algorithm 'sha512-224WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha512-224WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha512-256' [short]
+    ✔ executes algorithm 'sha512-256' [long]
+    ✔ executes algorithm 'sha512-256WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha512-256WithRSAEncryption' [long]
+    ✔ executes algorithm 'sha512WithRSAEncryption' [short]
+    ✔ executes algorithm 'sha512WithRSAEncryption' [long]
+    - executes algorithm 'shake128' [short]
+    - executes algorithm 'shake128' [long]
+    - executes algorithm 'shake256' [short]
+    - executes algorithm 'shake256' [long]
+    ✔ executes algorithm 'sm3' [short]
+    ✔ executes algorithm 'sm3' [long]
+    ✔ executes algorithm 'sm3WithRSAEncryption' [short]
+    ✔ executes algorithm 'sm3WithRSAEncryption' [long]
+    ✔ executes algorithm 'ssl3-md5' [short]
+    ✔ executes algorithm 'ssl3-md5' [long]
+    ✔ executes algorithm 'ssl3-sha1' [short]
+    ✔ executes algorithm 'ssl3-sha1' [long]
+    - executes algorithm 'whirlpool' [short]
+    - executes algorithm 'whirlpool' [long]
+
+  count: counts the number of bytes in a provided string
+    ✔ should accurately count 128 bytes
+    ✔ should accurately count 512 bytes
+    ✔ should accurately count 225 bytes
+
+  generate: create an ASCII string of the requested byte length
+    ✔ should accurately generate a 128 byte string
+    ✔ should accurately generate a 512 byte string
+    ✔ should accurately generate a 128 byte string
+
+
+  310 passing (841ms)
+  117 pending
+

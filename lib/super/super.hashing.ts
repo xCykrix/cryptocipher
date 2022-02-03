@@ -4,7 +4,7 @@ export interface Superify {
 }
 
 const parentSuper: Superify = {
-  $integration: 'Supported Hmac Implementations by CryptoCipher',
+  $integration: 'Supported Hashing Implementations by CryptoCipher',
 
   disabled: [
     'md4',

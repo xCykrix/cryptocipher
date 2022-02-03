@@ -4,6 +4,7 @@ import { CipherDriver } from './lib/driver.cipher';
 import { HashingDriver } from './lib/driver.hashing';
 import { HmacDriver } from './lib/driver.hmac';
 import { superify as cipher_superify } from './lib/super/super.cipher';
+import { superify as hashing_superify } from './lib/super/super.hashing';
 import { superify as hmac_superify } from './lib/super/super.hmac';
 
 /**
@@ -57,6 +58,13 @@ export function getCipher(identifier: string): CipherDriver {
  * @public
  */
 export function getHasher(identifier: string): HashingDriver {
+  const disabled = hashing_superify().disabled;
+
+  // Validate against the list of disabled identifiers.
+  if (disabled.includes(identifier)) {
+    throw disabledIdentifier(identifier);
+  }
+  
   // Validate against the list of system-available identifiers.
   if (getHashes().includes(identifier)) {
     return new HashingDriver(identifier);
