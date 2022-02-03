@@ -17,7 +17,6 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    ".rc/script/configuration/.trunk/_/tsconfig.json",
     "dist",
     "lib",
     "index.ts",
@@ -30,7 +29,7 @@
   "scripts": {
     "start": "launch",
     "prepare": "husky install",
-    "prepack": "npm start build/library"
+    "prepack": "npm exec --package=typescript -c 'tsc --project ./tsconfig.json'"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
