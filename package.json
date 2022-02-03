@@ -3,7 +3,7 @@
   "description": "Simplified Node.js Encryption, Hashing, and Hmac. Featuring security & policy by design to ensure strong standards for development of your services.",
   "version": "3.1.0",
   "license": "MIT",
-  "author": "Samuel Voeller <samuel.voeller@mxsrv.amethyst.live> (https://invite-to.amethyst.live)",
+  "author": "Samuel Voeller <samuel.voeller@amethyst.live> (https://invite-to.amethyst.live)",
   "contributors": [],
   "homepage": "https://github.com/amethyst-studio/cryptocipher",
   "repository": {

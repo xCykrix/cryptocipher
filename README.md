@@ -92,7 +92,7 @@ This package is officially compatible with Node.js `v16.0.0` or higher, and NPM 
 
 _For examples of usage, please refer to the [Documentation](https://amethyst-studio.github.io/cryptocipher/index.html) or [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki)_.
 
-If you need more assistance, please open a [Discussion](/discussions) to chat with us or join our [Community Discord Server](https://invite-to.amethyst.live) for real-time support.
+If you need more assistance, please open a [Discussion](https://github.com/amethyst-studio/cryptocipher/discussions) to chat with us or join our [Community Discord Server](https://invite-to.amethyst.live) for real-time support.
 
 ## Roadmap
 
@@ -102,7 +102,7 @@ See the [open issues](https://github.com/amethyst-studio/cryptocipher/issues) fo
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are absolutely appreciated.
 
-If you have suggestions for adding or removing from the project, feel free to open an issue to discuss it with us. If you want to work on an issue, look for the "State: Help Wanted" label and leave a comment saying you are going to try and take it on!
+If you have suggestions for adding or removing from the project, please open a discussion with us first to ensure the scope of the project is upheld. If you want to work on an issue, look for the "State: Help Wanted" label and leave a comment saying you are going to try and take it on!
 
 Some tips for the smooth flow of contribution:
 
