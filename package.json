@@ -47,6 +47,7 @@
     "mocha": "^9.2.0",
     "run-script-os": "^1.1.6",
     "script-launcher": "^1.37.1",
+    "ts-node": "^10.4.0",
     "typedoc": "^0.22.11",
     "typescript": "^4.5.5"
   },
