@@ -60,5 +60,5 @@
     "enable": true
   },
   "exclude": ["dist"],
-  "include": ["*.ts", "**/*.ts", ".eslintrc.js"]
+  "include": ["*.ts", "**/*.ts"]
 }
