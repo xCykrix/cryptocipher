@@ -26,7 +26,7 @@
     "declaration": true,
     "declarationMap": true,
     "downlevelIteration": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "importsNotUsedAsValues": "error",
     "inlineSourceMap": true,
     "inlineSources": true,
