@@ -22,6 +22,7 @@
     "baseUrl": "./",
     "module": "CommonJS",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "types": ["node", "mocha", "chai"],
     "declaration": true,
     "declarationMap": true,
@@ -60,5 +61,5 @@
     "enable": true
   },
   "exclude": ["dist"],
-  "include": ["*.ts", "**/*.ts"]
+  "include": ["*.ts", "**/*.ts", "*.json", "**/*.json"]
 }
