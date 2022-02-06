@@ -131,7 +131,8 @@ Distributed under the MIT License. See [LICENSE](https://github.com/amethyst-stu
 
 ## Authors
 
-* **Samuel Voeller** - *Organization Owner* - [Samuel Voeller](https://github.com/xCykrix) - *Initial Champion / Planner*
+<!-- trunk-ignore(markdownlint/MD049) -->
+* **Samuel Voeller** - *Organization Owner* - [Samuel Voeller](https://github.com/xCykrix) - Initial Champion / Planner
 
 ## Acknowledgements
 
