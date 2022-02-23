@@ -10,6 +10,17 @@ function init(): void {
   }
 }
 
+/**
+ * Count the number of bytes in a string.
+ *
+ * @param input - The string to count.
+ * 
+ * @returns - The number of bytes in the string.
+ */
+export function count(input: string): number {
+  return Buffer.byteLength(input);
+}
+
 export function generate(bytes: number): string {
   if (!build) {
     init();
@@ -30,9 +41,4 @@ export function generate(bytes: number): string {
     r.push(chr);
   }
   return r.join('');
-}
-
-
-export function count(input: string): number {
-  return Buffer.byteLength(input);
 }

@@ -7,14 +7,11 @@ import type { DecryptionContext, DecryptionResponse, EncryptionContext, Encrypti
 import { count, generate } from './utils/util';
 
 /**
- * Pre-initialized Cipher Interface.
+ * The CipherDriver class.
  *
  * @remarks
  *
- * This is a reusable interface and does not need to be reinitialized between each usage.
- *
- * @readonly
- * @sealed
+ * This is a reusable class and does not need to be reinitialized between each usage. Use the getCipher function to initialize.
  */
 export class CipherDriver {
   private readonly _bounds;
@@ -24,11 +21,9 @@ export class CipherDriver {
   private readonly _superify: Superify;
 
   /**
-   * Initializes the Interface with the selected identifier.
+   * Wrapper around the respective Cipher algorithm based on the provided context.
    *
-   * @param identifier - The selected identifier validated before registration.
-   *
-   * @readonly
+   * @param identifier - The identifier of the algorithm to be used.
    */
   public constructor(identifier: string) {
     this._identifier = identifier;
@@ -39,15 +34,12 @@ export class CipherDriver {
   /**
    * Executes the respective Cipher algorithm on the provided context.
    *
-   * @param context - The EncryptionContext object to be provided to the algorithm.
+   * @param context - The EncryptionContext to be provided to the algorithm.
    *
-   * @returns - The Promise<EncryptionResponse> object after processing by the algorithm.
+   * @returns - The EncryptionResponse wrapped in a Promise.
    *
-   * @throws Error (sec:violation:OOB_keyLength) - If the user provided input is in an unsafe state. Please verify the key length meets the requirements of the algorithm.
-   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Please verify the input is not blank.
-   *
-   * @public
-   * @readonly
+   * @throws Error (sec:violation:OOB_keyLength) - If the user provided input is in an unsafe state. Verify the key length meets the requirements of the algorithm.
+   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Verify the input is not blank.
    */
   // trunk-ignore(eslint/@typescript-eslint/require-await)
   public async encrypt(context: EncryptionContext | undefined): Promise<EncryptionResponse> {
@@ -103,15 +95,12 @@ export class CipherDriver {
   /**
    * Executes the respective Cipher algorithm on the provided context.
    *
-   * @param context - The DecryptionContext object to be provided to the algorithm.
+   * @param context - The DecryptionContext to be provided to the algorithm.
    *
-   * @returns - The Promise<DecryptionResponse> object after processing by the algorithm.
+   * @returns - The DecryptionResponse wrapped in a Promise.
    *
-   * @throws Error (sec:violation:OOB_keyLength) - If the user provided input is in an unsafe state. Please verify the key length meets the requirements of the algorithm.
-   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Please verify the input is not blank.
-   *
-   * @public
-   * @readonly
+   * @throws Error (sec:violation:OOB_keyLength) - If the user provided input is in an unsafe state. Verify the key length meets the requirements of the algorithm.
+   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Verify the input is not blank.
    */
   // trunk-ignore(eslint/@typescript-eslint/require-await)
   public async decrypt(context: DecryptionContext | undefined): Promise<DecryptionResponse> {

@@ -3,21 +3,22 @@ import { disabledIdentifier, unknownIdentifier } from './lib/utils/error';
 import { CipherDriver } from './lib/driver.cipher';
 import { HashingDriver } from './lib/driver.hashing';
 import { HmacDriver } from './lib/driver.hmac';
-import { superify as cipher_superify } from './lib/super/super.cipher';
-import { superify as hashing_superify } from './lib/super/super.hashing';
-import { superify as hmac_superify } from './lib/super/super.hmac';
+import { superify as cipherSuperify } from './lib/super/super.cipher';
+import { superify as hashingSuperify } from './lib/super/super.hashing';
+import { superify as hmacSuperify } from './lib/super/super.hmac';
 
 /**
- * Obtain an instance of the requested CipherDriver.
+ * Initialize the CipherDriver instance for the selected identifier.
  *
  * @remarks
  *
- * Should accept any supported identifier from the crypto#getCiphers() function.
+ * Accepts any supported identifier from the crypto#getCiphers() function. Will generate an error on unsupported identifiers.
  * Reference: https://nodejs.org/api/crypto.html#crypto_crypto_getciphers
+ * Unsupported: https://github.com/amethyst-studio/cryptocipher/blob/main/lib/super/super.cipher.ts
  *
- * @param identifier - The requested implementation.
+ * @param identifier - The requested identifier.
  *
- * @returns The pre-configured implementation from the requested identifier.
+ * @returns The initialized instance of the requested identifier.
  *
  * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or considered unstable.
  * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
@@ -25,7 +26,7 @@ import { superify as hmac_superify } from './lib/super/super.hmac';
  * @public
  */
 export function getCipher(identifier: string): CipherDriver {
-  const disabled = cipher_superify().disabled;
+  const disabled = cipherSuperify().disabled;
 
   // Validate against the list of disabled identifiers.
   if (disabled.includes(identifier)) {
@@ -42,29 +43,30 @@ export function getCipher(identifier: string): CipherDriver {
 }
 
 /**
- * Obtain an instance of the requested HashingDriver.
+ * Initialize the HashingDriver instance for the selected identifier.
  *
  * @remarks
  *
- * Should accept any supported identifier from the crypto#getHashes() function.
+ * Accepts any supported identifier from the crypto#getHashes() function. Will generate an error on unsupported identifiers.
  * Reference: https://nodejs.org/api/crypto.html#crypto_crypto_gethashes
+ * Unsupported: https://github.com/amethyst-studio/cryptocipher/blob/main/lib/super/super.hashing.ts
  *
- * @param identifier - The requested implementation.
+ * @param identifier - The requested identifier.
  *
- * @returns The pre-configured implementation from the requested identifier.
+ * @returns The initialized instance of the requested identifier.
  *
  * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
  *
  * @public
  */
 export function getHasher(identifier: string): HashingDriver {
-  const disabled = hashing_superify().disabled;
+  const disabled = hashingSuperify().disabled;
 
   // Validate against the list of disabled identifiers.
   if (disabled.includes(identifier)) {
     throw disabledIdentifier(identifier);
   }
-  
+
   // Validate against the list of system-available identifiers.
   if (getHashes().includes(identifier)) {
     return new HashingDriver(identifier);
@@ -75,16 +77,16 @@ export function getHasher(identifier: string): HashingDriver {
 }
 
 /**
- * Obtain an instance of the requested HmacDriver.
+ * Initialize the HmacDriver instance for the selected identifier.
  *
  * @remarks
  *
- * Should accept any supported identifier from the crypto#getHashes() function.
+ * Accepts any supported identifier from the crypto#getHashes() function. Will generate an error on unsupported identifiers.
  * Reference: https://nodejs.org/api/crypto.html#crypto_crypto_gethashes
  *
- * @param identifier - The requested implementation.
+ * @param identifier - The requested identifier.
  *
- * @returns The pre-configured implementation from the requested identifier.
+ * @returns The initialized instance of the requested identifier.
  *
  * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or considered unstable.
  * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
@@ -92,7 +94,7 @@ export function getHasher(identifier: string): HashingDriver {
  * @public
  */
 export function getHmac(identifier: string): HmacDriver {
-  const disabled = hmac_superify().disabled;
+  const disabled = hmacSuperify().disabled;
 
   // Validate against the list of disabled identifiers.
   if (disabled.includes(identifier)) {

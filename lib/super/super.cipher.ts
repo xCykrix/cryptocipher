@@ -40,6 +40,11 @@ const parentSuper: Superify = {
     'des-cfb1',
     'des-cfb8',
     'des-ecb',
+    'des-ede',
+    'des-ede-cbc',
+    'des-ede-cfb',
+    'des-ede-ecb',
+    'des-ede-ofb',
     'des-ofb',
     'des3-wrap',
     'desx',
@@ -75,16 +80,6 @@ const parentSuper: Superify = {
 
   overrides: {
     'aes-128-cbc': {
-      ivLength: 16,
-      keyLength: 16,
-      tagLength: 128,
-    },
-    'aes-128-cbc-hmac-sha1': {
-      ivLength: 16,
-      keyLength: 16,
-      tagLength: 128,
-    },
-    'aes-128-cbc-hmac-sha256': {
       ivLength: 16,
       keyLength: 16,
       tagLength: 128,
@@ -194,16 +189,6 @@ const parentSuper: Superify = {
       keyLength: 32,
       tagLength: 128,
     },
-    'aes-256-cbc-hmac-sha1': {
-      ivLength: 16,
-      keyLength: 32,
-      tagLength: 128,
-    },
-    'aes-256-cbc-hmac-sha256': {
-      ivLength: 16,
-      keyLength: 32,
-      tagLength: 128,
-    },
     'aes-256-ccm': {
       ivLength: 13,
       keyLength: 32,
@@ -259,33 +244,15 @@ const parentSuper: Superify = {
       keyLength: 16,
       tagLength: 128,
     },
-    'aes128-wrap': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
     aes192: {
       ivLength: 16,
       keyLength: 24,
       tagLength: 128,
     },
-    'aes192-wrap': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
     aes256: {
       ivLength: 16,
       keyLength: 32,
       tagLength: 128,
-    },
-    'aes256-wrap': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
     },
     'aria-128-cbc': {
       ivLength: 16,
@@ -437,42 +404,6 @@ const parentSuper: Superify = {
       keyLength: 32,
       tagLength: 128,
     },
-    bf: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'bf-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'bf-cfb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'bf-ecb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'bf-ofb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    blowfish: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
     'camellia-128-cbc': {
       ivLength: 16,
       keyLength: 16,
@@ -593,42 +524,12 @@ const parentSuper: Superify = {
       keyLength: 32,
       tagLength: 128,
     },
-    cast: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'cast-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'cast5-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'cast5-cfb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'cast5-ecb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'cast5-ofb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
+
+
+
+
+
+
     chacha20: {
       ivLength: 16,
       keyLength: 32,
@@ -639,72 +540,17 @@ const parentSuper: Superify = {
       keyLength: 32,
       tagLength: 16,
     },
-    des: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-cfb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-cfb1': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-cfb8': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-ecb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-ede': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-ede-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-ede-cfb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-ede-ecb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'des-ede-ofb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
+
+
+
+
+
+
+
+
+
+
+
     'des-ede3': {
       ivLength: 0,
       keyLength: 24,
@@ -750,24 +596,9 @@ const parentSuper: Superify = {
       keyLength: 24,
       tagLength: 128,
     },
-    'des3-wrap': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    desx: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'desx-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
+
+
+
     'id-aes128-CCM': {
       ivLength: 13,
       keyLength: 16,
@@ -782,7 +613,6 @@ const parentSuper: Superify = {
       ivLength: 8,
       keyLength: 16,
       tagLength: 128,
-      disabled: true,
     },
     'id-aes128-wrap-pad': {
       ivLength: 4,
@@ -803,7 +633,6 @@ const parentSuper: Superify = {
       ivLength: 8,
       keyLength: 24,
       tagLength: 128,
-      disabled: true,
     },
     'id-aes192-wrap-pad': {
       ivLength: 4,
@@ -824,157 +653,36 @@ const parentSuper: Superify = {
       ivLength: 8,
       keyLength: 32,
       tagLength: 128,
-      disabled: true,
     },
     'id-aes256-wrap-pad': {
       ivLength: 4,
       keyLength: 32,
       tagLength: 128,
     },
-    'id-smime-alg-CMS3DESwrap': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    idea: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'idea-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'idea-cfb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'idea-ecb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'idea-ofb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    rc2: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-128': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-40': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-40-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-64': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-64-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-cfb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-ecb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc2-ofb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    rc4: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc4-40': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'rc4-hmac-md5': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    seed: {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'seed-cbc': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'seed-cfb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'seed-ecb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
-    'seed-ofb': {
-      ivLength: -1,
-      keyLength: -1,
-      tagLength: -1,
-      disabled: true,
-    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     sm4: {
       ivLength: 16,
       keyLength: 16,

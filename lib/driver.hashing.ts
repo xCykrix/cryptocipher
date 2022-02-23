@@ -3,24 +3,19 @@ import { createHash } from 'crypto';
 import type { HashingContext, HashingResponse } from './types/driver.t';
 
 /**
- * Pre-initialized Hashing Interface.
+ * The HashingDriver class.
  *
  * @remarks
  *
- * This is a reusable interface and does not need to be reinitialized between each usage.
- *
- * @readonly
- * @sealed
+ * This is a reusable class and does not need to be reinitialized between each usage. Use the getHasher function to initialize.
  */
 export class HashingDriver {
   private readonly _identifier: string;
 
   /**
-   * Initializes the Interface with the selected identifier.
+   * Wrapper around the respective Hashing algorithm based on the provided context.
    *
-   * @param identifier - The selected identifier validated before registration.
-   *
-   * @readonly
+   * @param identifier - The identifier of the algorithm to be used.
    */
   public constructor(identifier: string) {
     this._identifier = identifier;
@@ -29,14 +24,11 @@ export class HashingDriver {
   /**
    * Executes the respective Hashing algorithm on the provided context.
    *
-   * @param context - The HashingContext object to be provided to the algorithm.
+   * @param context - The HashingContext to be provided to the algorithm.
    *
-   * @returns - The Promise<HashingResponse> object after processing by the algorithm.
+   * @returns - The HashingResponse wrapped in a Promise.
    *
-   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Please verify the input is not blank.
-   *
-   * @public
-   * @readonly
+   * @throws Error (sec:violation:OOB_contentLength) - If the user provided input is an unsafe state. Verify the input is not blank.
    */
   // trunk-ignore(eslint/@typescript-eslint/require-await)
   public async digest(context: HashingContext | undefined): Promise<HashingResponse> {
