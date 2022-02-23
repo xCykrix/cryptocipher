@@ -1,11 +1,11 @@
 import { getCiphers, getHashes } from 'crypto';
-import { disabledIdentifier, unknownIdentifier } from './lib/utils/error';
 import { CipherDriver } from './lib/driver.cipher';
 import { HashingDriver } from './lib/driver.hashing';
 import { HmacDriver } from './lib/driver.hmac';
 import { superify as cipherSuperify } from './lib/super/super.cipher';
 import { superify as hashingSuperify } from './lib/super/super.hashing';
 import { superify as hmacSuperify } from './lib/super/super.hmac';
+import { disabledIdentifier, unknownIdentifier } from './lib/utils/error';
 
 /**
  * Initialize the CipherDriver instance for the selected identifier.
@@ -22,8 +22,6 @@ import { superify as hmacSuperify } from './lib/super/super.hmac';
  *
  * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or considered unstable.
  * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
- *
- * @public
  */
 export function getCipher(identifier: string): CipherDriver {
   const disabled = cipherSuperify().disabled;
@@ -56,8 +54,6 @@ export function getCipher(identifier: string): CipherDriver {
  * @returns The initialized instance of the requested identifier.
  *
  * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
- *
- * @public
  */
 export function getHasher(identifier: string): HashingDriver {
   const disabled = hashingSuperify().disabled;
@@ -83,6 +79,7 @@ export function getHasher(identifier: string): HashingDriver {
  *
  * Accepts any supported identifier from the crypto#getHashes() function. Will generate an error on unsupported identifiers.
  * Reference: https://nodejs.org/api/crypto.html#crypto_crypto_gethashes
+ * Unsupported: https://github.com/amethyst-studio/cryptocipher/blob/main/lib/super/super.hmac.ts
  *
  * @param identifier - The requested identifier.
  *
@@ -90,8 +87,6 @@ export function getHasher(identifier: string): HashingDriver {
  *
  * @throws Error (sec:violation:id_disabled) - If the requested identifier is disabled or considered unstable.
  * @throws Error (sec:violation:id_unknown) - If the requested identifier is unknown or unavailable.
- *
- * @public
  */
 export function getHmac(identifier: string): HmacDriver {
   const disabled = hmacSuperify().disabled;
