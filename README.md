@@ -48,13 +48,13 @@ Join our [Community Discord Server](https://invite-to.amethyst.live) for real-ti
 
 ## Built With
 
-The latest and greatest up-to-date technologies allow us to ensure that your project flows unhindered by upstream dependencies. With full strict testing protocol and release cycles, you can entrust your reliance on our technology stacks.
+The latest and greatest up-to-date technologies allow us to ensure that your project flows unhindered by upstream dependencies. With full strict testing protocol and release cycles, you can entrust your reliance on our technology stacks. All projects utilize the MERN stack and TypeScript where possible.
 
-* [TypeScript for Developing](https://www.typescriptlang.org)
-* [Node.js for Running](https://nodejs.org)
-* [NPM for Publishing](https://npmjs.org)
-* [Trunk for Linting](https://trunk.io)
-* [Airbnb for Styling](https://github.com/iamturns/eslint-config-airbnb-typescript)
+* [TypeScript for Development](https://www.typescriptlang.org)
+* [Node.js for the Runtime](https://nodejs.org)
+* [NPM for Publishing Libraries](https://npmjs.org)
+* [Trunk for Linting and Style Enforcement](https://trunk.io)
+* [Airbnb for Styling Guides](https://github.com/iamturns/eslint-config-airbnb-typescript)
 
 ## Getting Started
 
@@ -68,7 +68,7 @@ This package is officially compatible with Node.js `v16.0.0` or higher, and NPM 
 
 ### Installation
 
-1. Install the package with NPM using one of the two methods listed below.
+1. Install the package via `npm` or even directly from GitHub.
 
     ```bash
     # Install from npmjs.org.
@@ -78,7 +78,7 @@ This package is officially compatible with Node.js `v16.0.0` or higher, and NPM 
     > npm install git+https://github.com/amethyst-studio/cryptocipher
     ```
 
-2. Require or Import the package in the method used by your language. Below are examples of both methods.
+2. `require` or `import` the package in the method used by your language. Below are examples of both methods.
 
     ```js
     const { getCipher, getHasher, getHmac } = require('cryptocipher');
@@ -90,7 +90,7 @@ This package is officially compatible with Node.js `v16.0.0` or higher, and NPM 
 
 ## Usage
 
-_For examples of usage, please refer to the [Documentation](https://amethyst-studio.github.io/cryptocipher/index.html) or [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki)_.
+For examples of usage, please refer to the [Documentation](https://amethyst-studio.github.io/cryptocipher/index.html) or [GitHub Wiki](https://github.com/amethyst-studio/cryptocipher/wiki).
 
 If you need more assistance, please open a [Discussion](https://github.com/amethyst-studio/cryptocipher/discussions) to chat with us or join our [Community Discord Server](https://invite-to.amethyst.live) for real-time support.
 
@@ -131,7 +131,6 @@ Distributed under the MIT License. See [LICENSE](https://github.com/amethyst-stu
 
 ## Authors
 
-<!-- trunk-ignore(markdownlint/MD049) -->
 * **Samuel Voeller** - *Organization Owner* - [Samuel Voeller](https://github.com/xCykrix) - Initial Champion / Planner
 
 ## Acknowledgements
