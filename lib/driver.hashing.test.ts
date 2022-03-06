@@ -1,4 +1,5 @@
 // trunk-ignore-all(eslint/@typescript-eslint/require-await): This rule is not needed in the testing suite.
+// trunk-ignore-all(eslint/@typescript-eslint/no-misused-promises): This rule is not needed in the testing suite.
 
 // Pull the testing suite dependencies.
 import { expect } from 'chai';
